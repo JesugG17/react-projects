@@ -34,8 +34,11 @@ export const useTicTacToe = () => {
       if (thereAreWinner) {
         setWinner(thereAreWinner);
         return;
+      } else if (isDraw(newArray)) {
+        setWinner(false);
       }
-  
+      
+      console.log(turn);
       setTurn(newTurn);
   
     }
@@ -56,6 +59,10 @@ export const useTicTacToe = () => {
       }
   
       return null;
+    }
+
+    const isDraw = (newBoard) => {
+        return newBoard.every(square => square !== null);
     }
   
     const resetGame = () => {

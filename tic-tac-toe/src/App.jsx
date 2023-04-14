@@ -38,7 +38,7 @@ const App = () => {
         (winner !== null) &&
         <section onClick={resetGame} className='winner pointer'>
           <p className='text'>
-            The winner is { winner.toUpperCase() }
+            { !winner ? 'Ha habido un empate' : `The winner is ${ winner.toUpperCase() }`}
           </p>
           <p>Click to reset the game</p>
         </section>
