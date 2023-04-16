@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from 'react';
 
 export const GifCard = ({ category }) => {
 
     const url = `https://api.giphy.com/v1/gifs/search?api_key=23ETDkw3oXxCWbZ5Ci2mAJHTGwiQRs90&q=${ category }&limit=10&offset=0&rating=g&lang=en`;
     const [gifs, setGifs] = useState([]);
-    
+
     const getGifs = async() => {
         const resp = await fetch(url);
         const { data } = await resp.json();
@@ -18,26 +18,30 @@ export const GifCard = ({ category }) => {
 
         setGifs([...newGifs]);
     }
-
+    
     useEffect(() => {
         getGifs();
     }, [category]);
 
   return (
     <>
-        <h1 className='text-center'>{ category }</h1>
-        <div className='gif_container'>
-            {
-                gifs.map( ({ title, url, id }) => {
-                    return (
-                        <div className='gif_card' key={ id }>
-                            <img src={ url } /> 
-                            <p className="text-center">{ title }</p>
-                        </div>
-                    )
-                })
+        <h1 className={`text-center ${ gifs.length === 0 ? 'd-none' : '' }`}>{ category }</h1>
+            {   
+                gifs.length > 0 &&
+                <div className='gif_container'>
+                    {
+                        gifs.map( ({ title, url, id }) => {
+                            return (
+                                <div className='gif_card' key={ id }>
+                                    <img src={ url } /> 
+                                    <p className="text-center">{ title ? title : `${ category } GIF` }</p>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
             }
-        </div>
+        
     </>
   )
 }

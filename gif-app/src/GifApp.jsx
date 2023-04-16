@@ -1,24 +1,13 @@
 import { useState } from 'react';
 import { GifCard } from './components/GifCard';
+import { GifAdd } from './components/GifAdd';
 
 export const GifApp = () => {
   
   
-  const [formState, setFormState] = useState('');
   const [categories, setCategories] = useState([])
 
-  const handleChange = (event) => {
-    setFormState(event.target.value);
-  }
-
-  const handleSubmit = async(event) => {
-    event.preventDefault();
-    if (formState.length <= 1) return;
-
-    setCategories([ formState, ...categories ]);
-    setFormState('');
-  }
-
+  
   return (
     <>
       <header className='gif_header'>
@@ -26,16 +15,7 @@ export const GifApp = () => {
         <hr />
       </header>
       
-      <div className='git_input mb-3'>
-        <form onSubmit={handleSubmit}>
-          <input
-            className="form-control"
-            value={ formState }
-            onChange={ handleChange }
-            type='text'
-          />
-        </form>
-      </div>
+      <GifAdd setCategories={ setCategories }/>
 
       {
         categories.map( (category, index) => (
