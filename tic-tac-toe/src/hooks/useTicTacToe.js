@@ -1,21 +1,6 @@
-import { useState } from "react";
-
-const TURNS = {
-    X: 'x',
-    O: 'o'
-};
-  
-const WINNING_COMOBS = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
-
+import { useState } from 'react';
+import confetti from 'canvas-confetti';
+import { TURNS, WINNING_COMOBS } from '../types';
 
 export const useTicTacToe = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
@@ -32,13 +17,13 @@ export const useTicTacToe = () => {
       const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
       const thereAreWinner = checkWinner(newArray);
       if (thereAreWinner) {
+        confetti();
         setWinner(thereAreWinner);
         return;
       } else if (isDraw(newArray)) {
         setWinner(false);
       }
       
-      console.log(turn);
       setTurn(newTurn);
   
     }
