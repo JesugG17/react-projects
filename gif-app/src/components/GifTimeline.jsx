@@ -9,7 +9,7 @@ export const GifTimeline = ({ categories, handleCategory }) => {
             return (
               <div
                 onClick={() => handleCategory(category)}
-                className='timeline_item pointer'
+                className={`timeline_item pointer ${ index === 0 ? 'selected' : ''}`}
                 key={ index }
               >
                 <p className='text-center'>{ category }</p>
