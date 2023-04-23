@@ -1,6 +1,5 @@
 // import { mapboxInstance } from "./api/mapbox.api"
 import { SyntheticEvent, useState } from 'react'
-import axios from 'axios';
 import { Feature, MapboxAPI } from './interfaces/mapbox.interface';
 import { OpenWeatherAPI, Weather } from './interfaces/openWeather.interface';
 import { openWeatherInstance, mapboxInstance } from './api';
@@ -16,16 +15,29 @@ export const WeatherApp = () => {
     const handleSearch = async(event: SyntheticEvent) => {
         event.preventDefault();
         const { data } = await mapboxInstance.get<MapboxAPI>(`${formState}.json`);;
+
+        setCity(formState);
+        setFormState('');
+        setWeather(undefined);
         setFeatures(data.features);
     }
 
     const handleWeather = async(coords: number[]) => {
-        const [lat, lon] = coords;
-        const { data } = await openWeatherInstance.get<OpenWeatherAPI>(`weather?lat=${ lat }&lon=${ lon }`);
-        const { weather } = data;
-
-        setWeather(weather[0]);
+        try {
+            const [lat, lon] = coords;
+            const { data } = await openWeatherInstance.get<OpenWeatherAPI>(`weather?lat=${ lat }&lon=${ lon }`);
+            const [ weather ] = data.weather;
+            setWeather(weather);
+        } catch (error) {
+            setWeather({
+                id: 0,
+                description: 'No city information found!',
+                main: 'Nothing to show',
+                icon: 'no-one'
+            })
+        }
         setFeatures([]);
+
     }
 
     const handleChange = (event: SyntheticEvent) => {
@@ -36,7 +48,8 @@ export const WeatherApp = () => {
 
   return (
     <main className='main_container'>
-        
+        <div className='shape shape-1'></div>
+        <div className='shape shape-2'></div>
         <div className='card_container'>
             
             <header className="card_header">
@@ -49,8 +62,11 @@ export const WeatherApp = () => {
                 </form>
                 <button
                     type='submit'
+                    className='pointer'
                     onClick={ handleSearch }
-                >Search</button>
+                >
+                    Search
+                </button>
             </header>
 
             <section className="card_weather">
@@ -68,10 +84,11 @@ export const WeatherApp = () => {
                 }
                 {
                     weather &&
-                    <div>
-                        <h3>{}</h3>
-                        <p>{weather.description}</p>
+                    <div className='weather_information'>
+                        <h3>{ city }</h3>
                         <p>{weather.main}</p>
+                        <p>{weather.description}</p>
+                        <img src={`assets/${ weather.main }.png`} alt={ `${ city } weather`}/>
                     </div>
                 }
             </section>

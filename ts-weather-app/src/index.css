@@ -1,17 +1,41 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --white: #ffffff;
+  --off-white: #e5e5e5;
+  --transp-white-1: rgba(255, 255, 255, 0.25);
+  --transp-white-2: rgba(255, 255, 255, 0.1);
+  --blue-1: #62b8f5;
+  --blue-2: #4475ef;
+  --shadow: rgba(3, 46, 87, 0.2);
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
 }
 
 .main_container {
+  display: flex;
   width: 100%;
   height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .card_container {
   display: flex;
-  border: 1px solid black;
   padding: 10px;
-  box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, .6);
+  box-shadow: 0 1.8em 3.7em var(--shadow);
+  background: var(--transp-white-2);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--transp-white-2);
   flex-direction: column;
   width: 400px;
   height: 500px;
@@ -19,9 +43,68 @@
 }
 
 .card_container header {
-  display: flex;
-  justify-content: space-between;
-  
+  display: flex;  
+  margin-top: 15px;
+}
+
+.card_header input,
+.card_header button {
+  outline: none;
+  font-size: 1em;
+  border: none;
+}
+
+.card_header button {
+  width: 30%;
+}
+
+.card_header input {
+  padding: 1em;
+  background-color: transparent;
+  border-bottom: 2px solid var(--transp-white-1);
+  color: var(--white);
+  font-weight: 300;
+}
+
+.card_header input:focus {
+  border-color: var(--white);
+}
+
+.card_header input::placeholder {
+  color: var(--off-white);
+}
+
+.card_header button {
+  color: var(--blue-2);
+  background-color: var(--white);
+  border-radius: 0.3em;
+
+}
+
+.card_header button:hover {
+  background-color: #000000;
+  transition-delay: 2s;
+}
+
+.shape {
+  position: absolute;
+  background-color: var(--transp-white-1);
+  backdrop-filter: blur(1.2em);
+  border: 2px solid var(--transp-white-2);
+  border-radius: 50%;
+}
+
+.shape-1 {
+  height: 13em;
+  width: 13em;
+  right: -6.5em;
+  top: 1.8em;
+}
+.shape-2 {
+  height: 11em;
+  width: 11em;
+  bottom: -3.7em;
+  left: -2.5em;
 }
 
 form {
@@ -29,10 +112,37 @@ form {
 }
 
 input {
-  width: 90%;
+  width: 80%;
 }
 
 
 .pointer {
    cursor: pointer;
+}
+
+.weather_information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weather_information img {
+  width: 50%;
+  margin-top: 25px;
+}
+
+.weather_information h3 {
+  margin-top: 10px;
+  color: var(--white);
+  letter-spacing: 0.3em;
+  font-size: 2.0em;
+  text-align: center;
+}
+
+.weather_information p {
+  color: var(--off-white);
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 20px;
+  letter-spacing: 0.1em;
 }
