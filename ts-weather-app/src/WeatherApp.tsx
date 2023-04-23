@@ -1,12 +1,7 @@
-// import { mapboxInstance } from './api/mapbox.api'
 import { SyntheticEvent, useState } from 'react'
-import { Feature, MapboxAPI } from './interfaces/mapbox.interface';
-import { OpenWeatherAPI, Weather } from './interfaces/openWeather.interface';
 import { openWeatherInstance, mapboxInstance } from './api';
-import { WeatherInformation } from './components/WeatherInformation';
-import { WeatherOptions } from './components/WeatherOptions';
-import { WeatherSearch } from './components/WeatherSearch';
-
+import { Feature, MapboxAPI, OpenWeatherAPI, Weather } from './interfaces';
+import { WeatherInformation, WeatherOptions, WeatherSearch } from './components';
 
 export const WeatherApp = () => {
     
