@@ -1,29 +1,37 @@
 // import { mapboxInstance } from "./api/mapbox.api"
-import { useState } from 'react'
+import { SyntheticEvent, useState } from 'react'
 import axios from 'axios';
-import { Feature, MapboxAPI } from "./interfaces/mapbox.interface";
+import { Feature, MapboxAPI } from './interfaces/mapbox.interface';
 import { OpenWeatherAPI, Weather } from './interfaces/openWeather.interface';
+import { openWeatherInstance, mapboxInstance } from './api';
 
 
 export const WeatherApp = () => {
     
     const [features, setFeatures] = useState<Feature[]>([]);
+    const [formState, setFormState] = useState('');
     const [weather, setWeather] = useState<Weather>();
-    const [city, setCity] = useState<string>('');
+    const [city, setCity] = useState('');
 
-    const handleSearch = async() => {
-        const { data } = await axios.get<MapboxAPI>('https://api.mapbox.com/geocoding/v5/mapbox.places/London.json?access_token=pk.eyJ1IjoiamNzdXMxNyIsImEiOiJjbDlxYTZma2IwNGlhM3BxbWlpNGI4cW5wIn0.VWLwlEWhlzmtIWEVbvsBsg');
+    const handleSearch = async(event: SyntheticEvent) => {
+        event.preventDefault();
+        const { data } = await mapboxInstance.get<MapboxAPI>(`${formState}.json`);;
         setFeatures(data.features);
     }
 
     const handleWeather = async(coords: number[]) => {
         const [lat, lon] = coords;
-
-        const { data } = await axios.get<OpenWeatherAPI>(`https://api.openweathermap.org/data/2.5/weather?lat=${ lat }&lon=${ lon }&appid=ea7e471915ba3199a20637b94a26cd56`)
+        const { data } = await openWeatherInstance.get<OpenWeatherAPI>(`weather?lat=${ lat }&lon=${ lon }`);
         const { weather } = data;
 
         setWeather(weather[0]);
         setFeatures([]);
+    }
+
+    const handleChange = (event: SyntheticEvent) => {
+        const target = event.target as HTMLInputElement;
+
+        setFormState(target.value);
     }
 
   return (
@@ -32,12 +40,15 @@ export const WeatherApp = () => {
         <div className='card_container'>
             
             <header className="card_header">
-                <form>
+                <form onSubmit={ handleSearch }>
                     <input 
                         placeholder="Enter a city name"
+                        value={ formState }
+                        onChange={ handleChange }
                     />
                 </form>
                 <button
+                    type='submit'
                     onClick={ handleSearch }
                 >Search</button>
             </header>
