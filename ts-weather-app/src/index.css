@@ -129,6 +129,7 @@ input {
 .weather_information img {
   width: 50%;
   margin-top: 25px;
+  object-fit: cover;
 }
 
 .weather_information h3 {
@@ -145,4 +146,26 @@ input {
   font-size: 1.3em;
   margin-top: 20px;
   letter-spacing: 0.1em;
+}
+
+.weather_options_container h3 {
+  color: var(--white);
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+}
+
+.weather_options {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.weather_options p {
+  color: var(--off-white);
+  text-align: center;
+}
+
+.weather_options p:hover {
+  color: var(--white);
 }
