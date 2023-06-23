@@ -29,7 +29,7 @@ export const useWeather = () => {
                 description: 'No city information found!',
                 main: 'Nothing to show',
                 icon: 'no-one'
-            })
+            });
         }
         setFeatures([]);
 

@@ -169,3 +169,12 @@ input {
 .weather_options p:hover {
   color: var(--white);
 }
+
+.first_text {
+  color: var(--white);
+  text-align: center;
+  font-weight: bold;
+  font-size: 2em;
+  margin-top: 150px;
+  align-content: center;
+}
