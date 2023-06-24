@@ -5,3 +5,6 @@ This is a project of a javascript quiz using:
 * Zustand  
 
 Using zustand for global state instead redux
+
+## Visit the following link for view the app
+https://javascript-quiz-g17.netlify.app/
