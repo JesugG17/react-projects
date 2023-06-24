@@ -2,10 +2,11 @@ import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Question } from "./Question";
 import { useQuestionsStore } from "./store/questions";
 import { Container, Typography, IconButton } from "@mui/material";
+import { Footer } from "./Footer";
 
 export const Game = () => {
   const { questions, currentQuestion, goPrevQuestion, goNextQuestion } = useQuestionsStore((state) => state);
-
+// :a
   const questionInfo = questions[currentQuestion];
 
   return (
@@ -20,6 +21,7 @@ export const Game = () => {
           <ArrowForwardIos />
         </IconButton>
       </Container>
+      <Footer />
     </>
   );
 };
