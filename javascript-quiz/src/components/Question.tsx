@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { type Question as QuestionType } from './types'
+import { type Question as QuestionType } from '../types'
 import { Card, Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material'
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { useQuestionsStore } from './store/questions';
+import { useQuestionsStore } from '../store/questions';
 
 export const Question: FC<Props> = ({ info }) => {
 

@@ -1,6 +1,6 @@
 import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import { Question } from "./Question";
-import { useQuestionsStore } from "./store/questions";
+import { useQuestionsStore } from "../store/questions";
 import { Container, Typography, IconButton } from "@mui/material";
 import { Footer } from "./Footer";
 
@@ -12,7 +12,7 @@ export const Game = () => {
   return (
     <>
       <Question info={questionInfo} />
-      <Container sx={{ mt: 2, display: 'flex', gap: 3, justifyContent: 'center'}}>
+      <Container sx={{ mt: 2, display: 'flex', gap: 3, justifyContent: 'center', mb: 2}}>
         <IconButton onClick={goPrevQuestion} disabled={ currentQuestion === 0}>
           <ArrowBackIos />
         </IconButton>

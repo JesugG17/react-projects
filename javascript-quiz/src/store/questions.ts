@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { Question } from '../types';
-import { persist } from 'zustand/middleware';
-
+import { persist, devtools } from 'zustand/middleware';
+import confetti from 'canvas-confetti';
 interface State {
     questions: Question[]
     currentQuestion: number;
@@ -9,9 +9,10 @@ interface State {
     selectAnswer: (questionId: number, answerIndex: number ) => void;
     goNextQuestion: () => void;
     goPrevQuestion: () => void;
+    reset: () => void;
 };
 
-export const useQuestionsStore = create<State>()(persist((set, get) => {
+export const useQuestionsStore = create<State>()(devtools(persist((set, get) => {
     return {
         loading: false,
         questions: [],
@@ -35,6 +36,8 @@ export const useQuestionsStore = create<State>()(persist((set, get) => {
             const questionInfo = newQuestions[questionIndex];
             const isCorrectUserAnswer = questionInfo.correctAnswer === userSelectetedAnswer;
 
+
+            if (isCorrectUserAnswer) confetti();
             // update the state
             newQuestions[questionIndex] = {
                 ...questionInfo,
@@ -55,16 +58,18 @@ export const useQuestionsStore = create<State>()(persist((set, get) => {
             const { currentQuestion } = get();
             const prevQuestion = currentQuestion - 1;
 
-
             if (prevQuestion >= 0) {
                 set({ currentQuestion: prevQuestion });
             }
             
+        },
+        reset: () => {
+            set({ currentQuestion: 0, questions: [] });
         }
     }
 }, {
     name: 'questions',
     getStorage: () => localStorage
-}));
+})));
 
 
