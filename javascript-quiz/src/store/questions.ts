@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import { Question } from '../types';
+import { persist } from 'zustand/middleware';
 
 interface State {
     questions: Question[]
@@ -10,7 +11,7 @@ interface State {
     goPrevQuestion: () => void;
 };
 
-export const useQuestionsStore = create<State>((set, get) => {
+export const useQuestionsStore = create<State>()(persist((set, get) => {
     return {
         loading: false,
         questions: [],
@@ -61,6 +62,9 @@ export const useQuestionsStore = create<State>((set, get) => {
             
         }
     }
-})
+}, {
+    name: 'questions',
+    getStorage: () => localStorage
+}));
 
 
