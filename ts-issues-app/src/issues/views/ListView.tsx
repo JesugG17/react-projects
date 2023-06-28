@@ -1,7 +1,6 @@
 import { IssueList } from '../components/IssueList';
 import { LabelPicker } from '../components/LabelPicker';
 
-
 export const ListView = () => {
   return (
     <div className="row mt-5">
