@@ -1,15 +1,15 @@
-import { useState, ChangeEvent, FC, useId } from 'react';
-import { Filters as FiltersType } from '../hooks/useFilter';
+import { ChangeEvent, useId } from 'react';
+import { useFilter } from '../hooks/useFilter';
 
-export const Filters: FC<Props>  = ({ setFilters }) => {
+export const Filters= () => {
 
-    const [minPrice, setMinPrice] = useState<number>(0);
+    const { setFilters, minPrice } = useFilter();
     const minPriceFilterId = useId();
     const categoryFilterId = useId();
 
     const onChangeMinPrice = (event: ChangeEvent<HTMLInputElement>) => {  
         const newMinPrice = event.currentTarget.valueAsNumber;
-        setMinPrice(newMinPrice);
+        // setMinPrice(newMinPrice);
         setFilters((prevState) => (
             {...prevState, minPrice: newMinPrice}
         ));
@@ -51,8 +51,3 @@ export const Filters: FC<Props>  = ({ setFilters }) => {
     </section>
   );
 };
-
-type Props = {
-    setFilters: React.Dispatch<React.SetStateAction<FiltersType>>
-}
-  

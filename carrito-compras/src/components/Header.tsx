@@ -1,18 +1,10 @@
-import React, { FC } from 'react'
 import { Filters } from './Filters';
-import { Filters as FiltersType } from '../hooks/useFilter';
 
-export const Header: FC<Props> = ({ setFilters }) => {
+export const Header = () => {
   return (
     <header>
       <h1 className="title">React Shop 🛒</h1>
-      <Filters 
-        setFilters={ setFilters }
-      />
+      <Filters/>
     </header>
   );
 };
-
-type Props = {
-  setFilters: React.Dispatch<React.SetStateAction<FiltersType>>
-}

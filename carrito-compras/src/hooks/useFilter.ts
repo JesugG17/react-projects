@@ -30,6 +30,8 @@ export const useFilter = () => {
     }, []);
 
     return {
+        filters,
+        ...filters,
         products: filteredProducts,
         setFilters
     }

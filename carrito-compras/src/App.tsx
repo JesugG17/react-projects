@@ -4,13 +4,11 @@ import { useFilter } from "./hooks/useFilter";
 
 export const App = () => {
   
-  const { products, setFilters } = useFilter();
+  const { products } = useFilter();
 
   return (
     <>
-      <Header 
-        setFilters={ setFilters }
-      />
+      <Header />
       <Products  
         products={ products }
       />
