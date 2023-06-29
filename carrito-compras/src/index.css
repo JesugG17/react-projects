@@ -108,4 +108,19 @@ img {
   background-color: #fff;
 }
 
+.floating__button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #42a0f8;
+  transition: all .3s ease;
+  top: 15px;
+  right: 15px;
+}
+
+.floating__button:hover {
+  scale: 1.1
+}
 

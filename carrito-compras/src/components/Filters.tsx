@@ -9,7 +9,6 @@ export const Filters= () => {
 
     const onChangeMinPrice = (event: ChangeEvent<HTMLInputElement>) => {  
         const newMinPrice = event.currentTarget.valueAsNumber;
-        // setMinPrice(newMinPrice);
         setFilters((prevState) => (
             {...prevState, minPrice: newMinPrice}
         ));
@@ -31,6 +30,7 @@ export const Filters= () => {
             type="range"
             id={minPriceFilterId}
             defaultValue={0}
+            value={minPrice}
             min="0" 
             max="1000"
             onChange={onChangeMinPrice} 
