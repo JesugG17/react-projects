@@ -1,20 +1,19 @@
-import { SyntheticEvent, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Product } from "./types/products";
 import { Products } from "./components/Products";
 import { Header } from "./components/Header";
 
-type Filters = {
+export type Filters = {
   category: string;
   minPrice: number;
 }
 
 const INITIAL_STATE: Filters = {
   category: 'all',
-  minPrice: 550
+  minPrice: 0
 };
 
 export const App = () => {
-  const [range, setRange] = useState(0);
   const [products, setProducts] = useState<Product[]>([])
   const [filters, setFilters] = useState<Filters>(INITIAL_STATE);
 
@@ -41,10 +40,13 @@ export const App = () => {
 
   return (
     <>
-      <Header />
+      <Header 
+        setFilters={ setFilters }
+      />
       <Products  
         products={ filteredProducts }
       />
     </>
   );
 };
+
