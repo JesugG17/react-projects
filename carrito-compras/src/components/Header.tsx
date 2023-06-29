@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { Filters } from './Filters';
-import { Filters as FiltersType } from '../App';
+import { Filters as FiltersType } from '../hooks/useFilter';
 
 export const Header: FC<Props> = ({ setFilters }) => {
   return (

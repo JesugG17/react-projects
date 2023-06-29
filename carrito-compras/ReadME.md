@@ -2,10 +2,9 @@
 
 1. E-Commerce  
 
-- Muestra una lista de productos que vienen un JSON 
-(usar [GET] https://dummyjson.com/products)
-- Añade un filtro por categoria
-- Añade un filtro por precio
+✅una lista de productos que vienen un JSON (usar [GET] https://dummyjson.com/products)    
+✅Añade un filtro por categoria  
+✅ Añade un filtro por precio  
 
 Haz uso de useContext para evitar pasar props innecesarias
 

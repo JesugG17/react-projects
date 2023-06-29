@@ -1,5 +1,5 @@
 import { AddToCartIcon } from "./Icons";
-import { Product } from '../types/products';
+import { Product } from '../interfaces/products';
 import { FC } from "react";
 
 export const Products: FC<Props> = ({ products }) => {
