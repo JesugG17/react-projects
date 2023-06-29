@@ -74,4 +74,34 @@ ul {
   gap: 20px;
 }
 
+.cards__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.product__card {
+  display: flex;
+  gap: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #181818;;
+}
+
+.card__button {
+  background-color: #0084ff;
+  
+}
+
+img {
+  width: 250px;
+  height: 150px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
 

@@ -3,7 +3,7 @@
 1. E-Commerce  
 
 - Muestra una lista de productos que vienen un JSON 
-(usar [GET] https://api.escuelajs.co/api/v1/products)
+(usar [GET] https://dummyjson.com/products)
 - Añade un filtro por categoria
 - Añade un filtro por precio
 
