@@ -191,4 +191,18 @@ img {
   .search__container {
     flex-direction: column;
   }
+
+  .product__card {
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .search__container label, p {
+    font-size: 12px;
+  }
+
+  .product__card p {
+    font-size: 14px;
+  }
 }
