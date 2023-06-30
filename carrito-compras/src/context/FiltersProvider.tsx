@@ -1,4 +1,4 @@
-import { FC, useState } from "react"
+import { FC, PropsWithChildren, useState } from "react"
 import { FiltersContext } from "./FiltersContext"
 import { Filters } from '../hooks/useFilter';
 
@@ -19,6 +19,4 @@ export const FiltersProvider: FC<Props> = ({ children }) => {
   )
 }
 
-type Props = {
-    children: React.ReactNode
-}
+type Props = PropsWithChildren
