@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useReducer } from "react"
+import { FC, PropsWithChildren, useEffect, useReducer } from "react"
 import { CartContext } from "./CartContext";
 import { Cart, CartActionKind } from "../interfaces/types";
 import { Product } from "../interfaces/products";
@@ -8,7 +8,11 @@ const initialState: Cart[]  = []
 
 export const CartProvider: FC<Props> = ({ children }) => {
   
-    const [cart, dispatch] = useReducer(cartReducer, initialState);
+    const [cart, dispatch] = useReducer(cartReducer, initialState, () => {
+        const storage = localStorage.getItem('cart') ?? '[]';
+
+        return JSON.parse(storage)
+    });
 
     const addToCart = (product: Product) => {
         dispatch({
@@ -30,6 +34,10 @@ export const CartProvider: FC<Props> = ({ children }) => {
             payload: {} as Product
         })
     }
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }, [cart]);
 
     return (
     <CartContext.Provider value={{
