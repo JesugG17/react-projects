@@ -29,7 +29,6 @@ export const Filters= () => {
         <input 
             type="range"
             id={minPriceFilterId}
-            defaultValue={0}
             value={minPrice}
             min="0" 
             max="1000"

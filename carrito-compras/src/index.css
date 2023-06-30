@@ -91,7 +91,7 @@ ul {
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #181818;;
+  background-color: #181818;
 }
 
 .card__button {
@@ -109,18 +109,48 @@ img {
 }
 
 .floating__button {
-  position: fixed;
-  width: 50px;
+  background-color: #09f;
+  border-radius: 50%;
   height: 50px;
   padding: 5px;
-  border-radius: 50%;
-  background-color: #42a0f8;
-  transition: all .3s ease;
-  top: 15px;
+  position: fixed;
   right: 15px;
+  top: 15px;
+  transition: all .3s ease;
+  width: 50px;
+  z-index: 9999;
 }
 
 .floating__button:hover {
   scale: 1.1
 }
 
+.cart {
+  width: 200px;
+  display: none;
+  padding: 20px;
+  height: 100%;
+  background-color: #000000;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+
+
+.show {
+  display: block;
+}
+
+.cart div {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cart footer {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  justify-content: center;
+  gap: 10px;
+}
