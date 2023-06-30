@@ -8,7 +8,7 @@ export const CartItem: FC<Props> = ({ cart }) => {
 
   return (
     <li>
-      <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="" />
+      <img src={cart.product.thumbnail} alt="" />
       <div>
         <strong>{cart.product.title}</strong> - ${cart.product.price}
       </div>
