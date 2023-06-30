@@ -164,6 +164,10 @@ img {
   margin-bottom: 20px;
 }
 
+.cart button {
+  background-color: #b2ababae;
+}
+
 .red {
   background: red;
 }
