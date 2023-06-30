@@ -22,7 +22,13 @@ export const CartProvider: FC<Props> = ({ children }) => {
             quantity: 1
         };
 
+        console.log(newCart);
         setCart([...cart, newCart]);
+    }
+
+    const clearProductInCart = (product: Product) => {
+        
+
     }
 
     const clearCart = () => {

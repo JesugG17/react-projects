@@ -22,6 +22,10 @@
   width: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -131,9 +135,10 @@ img {
   padding: 20px;
   height: 100%;
   background-color: #000000;
-  position: absolute;
+  position: fixed;
   right: 0px;
   top: 0;
+  overflow-y: scroll;
 }
 
 
@@ -153,4 +158,27 @@ img {
   margin-top: 5px;
   justify-content: center;
   gap: 10px;
+}
+
+.cart li {
+  margin-bottom: 20px;
+}
+
+.red {
+  background: red;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
