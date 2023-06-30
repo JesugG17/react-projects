@@ -5,6 +5,7 @@ import { Product } from "../interfaces/products";
 export type CartContexType = {
     cart: Cart[];
     addToCart: ( product: Product ) => void;
+    clearProductInCart: ( product: Product ) => void;
     clearCart: () => void; 
 }
 

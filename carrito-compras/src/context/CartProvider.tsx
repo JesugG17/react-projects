@@ -27,8 +27,8 @@ export const CartProvider: FC<Props> = ({ children }) => {
     }
 
     const clearProductInCart = (product: Product) => {
-        
-
+        const newCart = cart.filter( item => item.product.id !== product.id);
+        setCart(newCart);
     }
 
     const clearCart = () => {
@@ -39,6 +39,7 @@ export const CartProvider: FC<Props> = ({ children }) => {
     <CartContext.Provider value={{
         cart,
         addToCart,
+        clearProductInCart,
         clearCart
     }}>
         { children }

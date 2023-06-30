@@ -1,10 +1,10 @@
-import { AddToCartIcon, ClearCartIcon } from "./Icons";
+import { AddToCartIcon, RemoveFromCartIcon } from "./Icons";
 import { Product } from "../interfaces/products";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { useCart } from "../hooks/useCart";
 
 export const Products: FC<Props> = ({ products }) => {
-  const { cart, addToCart, clearCart } = useCart();
+  const { cart, addToCart, clearProductInCart } = useCart();
 
   const checkProductInCart = (product: Product) => {
     return cart.some((item) => item.product.id === product.id);
@@ -28,13 +28,13 @@ export const Products: FC<Props> = ({ products }) => {
                   className={`card__button ${ isProductInCart && 'red' }`}
                   onClick={() => {
                     if (isProductInCart) {
-                      
+                      clearProductInCart(product);                      
                       return;
                     }
                     addToCart(product);
                   }}
                 >
-                  {isProductInCart ? <ClearCartIcon /> : <AddToCartIcon />}
+                  {isProductInCart ? <RemoveFromCartIcon /> : <AddToCartIcon />}
                 </button>
               </div>
             </li>

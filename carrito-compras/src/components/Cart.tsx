@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { CartIcon, ClearCartIcon } from './Icons';
 import { useCart } from '../hooks/useCart';
-import { Product } from '../interfaces/products';
+import { CartItem } from './CartItem';
 
 export const Cart = () => {
   
   const [openCart, setOpenCart] = useState<boolean>(false);
-  const { cart, addToCart, clearCart } = useCart();
+  const { cart, clearCart } = useCart();
 
   return (
     <>
@@ -19,28 +19,16 @@ export const Cart = () => {
             </button>
         </div>
 
-        
         <aside className={`cart ${openCart && 'show'}`}>
           <ul>
             {
-              cart.map( item => {
-                return (
-                  <li>
-                    <img src="https://i.dummyjson.com/data/products/1/thumbnail.jpg" alt="" />
-                    <div>
-                      <strong>{item.product.title}</strong> - ${item.product.price}
-                    </div>
-                    <footer>
-                      <small>Qty: {item.quantity}</small>
-                      <button onClick={() => addToCart(item.product)}>+</button>
-                    </footer>
-                    <hr />
-                  </li>
-                )
-              })
+              cart.map( item => (
+                <CartItem
+                  key={item.product.id} 
+                  cart={ item }
+                />
+              ))            
             }
-
-           
           </ul>
           <button onClick={clearCart}><ClearCartIcon /></button>
         </aside>
