@@ -5,9 +5,10 @@ export type Cart = {
     quantity: number;
 }
 
-export type Action = 
- | { type: CartActionKind; payload: Cart;}
- | { type: CartActionKind; payload: null}
+export type Action = {
+    type: CartActionKind;
+    payload: Product
+}
 
 export enum CartActionKind {
     ADD_TO_CART = 'ADD',
