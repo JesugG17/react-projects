@@ -15,3 +15,8 @@
 ✅ Haz que se puedan modificar la cantidad de productos del carrito  
 ✅ Sincroniza los cambios del carrito con la lista de productos  
 ✅ Guarda en localStorage el carrito para que se recupere al recargar la pagina
+
+## DEPLOY
+
+
+https://carrito-compras-g17.netlify.app/
