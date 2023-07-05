@@ -1,69 +1,120 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  background-image: url(public/background.png);
+  background-position: center;
+  font-family: 'Poppins';
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.card {
+  width: 484px;
+  height: 515px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  padding: 25px;
+  position: relative;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+.card h4 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2F527B;
+  text-align: start;
+  line-height: 36px;
+  margin-top: 35px;
+}
+
+.card figure {
+  text-align: end;
+  position: absolute;
+  top: -80px;
+  right: 0;
+}
+
+.card figure img {
+  width: 162px;
+  height: 116px;
+}
+
+.questions__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  margin-top: 15px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.question {
+  width: 100%;
+  height: 56px;
+  list-style: none;
+  border: 1px solid #6066D0;
+  font-size: 18px;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 20px;
+  color: #6066D0;
+  transition: 0.3s all ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.question:hover {
+  color: #fff;
+  background-color: #F9A826;
+  border-color: #F9A826;
+}
+
+.question {
+  width: 100%;
+  display: flex;
+}
+
+.question p {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.question li {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.next__button {
+  padding: 15px 30px;
+  border-radius: 12px;
+  background-color: #F9A826;
+  border: 1px solid #F9A826;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 3px 3px 10px rgba(252, 168, 47, 0.4);
+
+}
+
+.button__container {
+  width: 100%;
+  display: flex;
+  justify-content: end;
 }
