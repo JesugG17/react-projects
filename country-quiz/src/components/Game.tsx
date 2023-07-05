@@ -1,18 +1,18 @@
-export const Card = () => {
+
+const LETTERS_OF_QUESTIONS = ['A', 'B', 'C', 'D'];
+
+export const Game = () => {
   return (
-    <section className="card">
-      <figure>
-        <img src="./adventure.svg" alt="" />
-      </figure>
+    <>
       <h4>This is the question</h4>
       <ul className="questions__container">
-        {["resp1", "resp2", "resp2", "resp4"].map((resp) => {
+        {["resp1", "resp2", "resp2", "resp4"].map((resp, index) => {
           return(
             <div
                 className="question" 
                 key={resp}
             >
-                <p>B</p>
+                <p>{LETTERS_OF_QUESTIONS[index]}</p>
                 <li>
                     {resp}
                 </li>
@@ -25,6 +25,6 @@ export const Card = () => {
             Next
         </button>
       </div>
-    </section>
+    </>
   );
 };
