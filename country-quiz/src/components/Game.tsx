@@ -3,7 +3,7 @@ import { useQuestionStore } from "../store/questions";
 const LETTERS_OF_QUESTIONS = ["A", "B", "C", "D"];
 
 export const Game = () => {
-  const { questions, currentQuestion } = useQuestionStore();
+  const { questions, currentQuestion, goNextQuestion } = useQuestionStore();
 
   return (
     <>
@@ -19,7 +19,12 @@ export const Game = () => {
         }
       </ul>
       <div className="button__container">
-        <button className="next__button">Next</button>
+        <button 
+          onClick={goNextQuestion}
+          className="next__button"
+        >
+            Next
+        </button>
       </div>
     </>
   );

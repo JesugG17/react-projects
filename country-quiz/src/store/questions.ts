@@ -5,15 +5,15 @@ import { CountryAPI } from "../types/country-api";
 
 interface State {
     questions: Question[];
-    countries: string[];
+    // countries: string[];
     currentQuestion: number;
     createQuestions: (limit: number, region?: string) => Promise<void>;
+    goNextQuestion: () => void;
 };
 
 
 export const useQuestionStore = create<State>((set, get) => ({
     questions: [],
-    countries: [],
     currentQuestion: 0,
     createQuestions: async(limit: number, region: string = 'europe') => {
         const { data } = await api.get<CountryAPI[]>(`/region/${region}`);
@@ -38,6 +38,16 @@ export const useQuestionStore = create<State>((set, get) => ({
         })
 
         set({ questions });
+
+    },
+    goNextQuestion: () => {
+        const { currentQuestion, questions } = get();
+        const nextQuestion = currentQuestion + 1;
+
+        if (nextQuestion <= questions.length - 1) {
+            set({ currentQuestion: nextQuestion});
+        }
+
 
     }
 
