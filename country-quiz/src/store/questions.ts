@@ -24,17 +24,16 @@ export const useQuestionStore = create<State>((set, get) => ({
         const questions: Question[] = shuffledCountries.map( country => {
             const question = `${country.capital} is the capital of...`
             const correctAnswer = country.name.common;
-            const restAnswers = allCountries.filter( c =>  c !== country.name.common).slice(0, 3);
+            const restAnswers = allCountries.filter( c =>  c !== country.name.common).sort(() => Math.random() - 0.5).slice(0, 3);
 
             const answers = [...restAnswers, correctAnswer].sort(() => Math.random() - 0.5);
-            const indexAnswer = answers.findIndex( c => c === country.name.common );
+            const indexAnswer = answers.findIndex( c => c === correctAnswer );
 
             return {
                 question,
                 correctAnswer: indexAnswer,
                 answers
             }
-
         })
 
         set({ questions });
