@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url(public/background.png);
+  background-image: url(/background.png);
   background-position: center;
   font-family: 'Poppins';
 }
@@ -85,6 +85,7 @@ body {
   gap: 60px;
   padding: 20px;
   color: #6066D0;
+  cursor: pointer;
   transition: 0.3s all ease;
 }
 

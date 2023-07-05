@@ -1,17 +1,11 @@
 
-
-
 export interface Question {
-    name: CountryName;
-    capital: string[];
+    question: string;
+    correctAnswer: number;
+    answers: string[];
+    userSelectedAnswer?: number;
+    isCorrectAnswer?: boolean;
 }
-
-
-interface CountryName {
-    common: string;
-    official: string;
-}
-
 
 
 
