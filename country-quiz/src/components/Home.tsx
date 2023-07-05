@@ -1,6 +1,10 @@
 import { Github, Linkedin } from "."
+import { useQuestionStore } from "../store/questions"
 
 export const Home = () => {
+
+    const { createQuestions } = useQuestionStore();
+
   return (
     <section className="home">
         <div className="introduction">
@@ -8,7 +12,7 @@ export const Home = () => {
                 <h4>Welcome to the country quiz!</h4>
                 <p>Test your geographic knowledge :)</p>
             </div>
-            <button>Start the quiz!</button>
+            <button onClick={() => createQuestions(10)}>Start the quiz!</button>
         </div>
         <footer className="media">
             <h4>Visit my other social medias!</h4>
