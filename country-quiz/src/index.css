@@ -178,3 +178,9 @@ body {
   background-color: #F9A826;
   color: #fff;
 }
+
+
+button[disabled] {
+  opacity: .3;
+  pointer-events: none;
+}
