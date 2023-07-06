@@ -30,7 +30,7 @@ body {
 
 .card {
   width: 484px;
-  height: 515px;
+  /* height: 515px; */
   border-radius: 24px;
   display: flex;
   flex-direction: column;
@@ -165,8 +165,6 @@ body {
   gap: 50px;
 }
 
-
-
 .introduction button {
   padding: 20px;
   background-color: transparent;
@@ -176,7 +174,21 @@ body {
   font-size: 18px;
   transition: 0.3s all ease;
   cursor: pointer;
-  margin-top: 40px;
+  /* margin-top: 20px; */
+}
+.introduction__options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.introduction__options select {
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  border: 1px solid #F9A826;
+  color: #6066D0;
 }
 
 .introduction button:hover {
@@ -186,10 +198,20 @@ body {
 
 
 button[disabled] {
-  opacity: .6;
+  /* opacity: .6; */
   pointer-events: none;
 }
 
+.next__button[disabled] {
+  opacity: .3;
+}
+
+.flag {
+  width: 84px;
+  height: 54px;
+  align-self: flex-start;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+}
 
 .winner {
   width: 100%;

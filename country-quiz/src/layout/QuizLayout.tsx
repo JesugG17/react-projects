@@ -1,10 +1,23 @@
-import { FC } from "react"
+import { FC, useMemo } from 'react';
+import { useQuestionStore } from "../store/questions";
 
 export const QuizLayout: FC<Props> = ({ children, containsImg = true }) => {
+
+  const isFlagQuiz = useQuestionStore(state => state.isFlagQuiz);
+
+  const cardHeight = useMemo(() => {
+    return isFlagQuiz ? 629 : 515
+  }, [isFlagQuiz]);
+
   return (
     <>
         <h1>COUNTRY QUIZ</h1>
-        <section className="card">
+        <section 
+          className="card"
+          style={{
+            height: cardHeight
+          }}
+        >
             {
               containsImg &&
               (

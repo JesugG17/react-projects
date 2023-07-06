@@ -8,7 +8,8 @@ interface State {
     questions: Question[];
     currentQuestion: number;
     isGameOver: boolean;
-    createQuestions: (limit: number, region?: string) => Promise<void>;
+    isFlagQuiz: boolean;
+    createQuestions: (limit: number,  isFlagQuiz: boolean, region: string) => Promise<void>;
     goNextQuestion: () => void;
     checkAnswer: (userSelectedAnswer: number) => void;
     resetGame: () => void;
@@ -19,14 +20,21 @@ export const useQuestionStore = create<State>((set, get) => ({
     questions: [],
     currentQuestion: 0,
     isGameOver: false,
-    createQuestions: async(limit: number, region: string = 'europe') => {
-        const { data } = await api.get<CountryAPI[]>(`/region/${region}`);
+    isFlagQuiz: false,
+    createQuestions: async(limit: number,  isFlagQuiz: boolean, region: string) => {
+
+        const endpoint = region === 'all' ? '/all' : `/region/${region}`;
+
+        const { data } = await api.get<CountryAPI[]>(endpoint);
 
         const shuffledCountries = data.sort(() => Math.random() - 0.5).slice(0, limit);
         const allCountries = data.map( country => country.name.common);
 
         const questions: Question[] = shuffledCountries.map( country => {
-            const question = `${country.capital} is the capital of...`
+            const question = (isFlagQuiz) 
+                             ? 'Which country does this flag belong to?' 
+                             : `${country.capital} is the capital of`;
+
             const correctAnswer = country.name.common;
             const restAnswers = allCountries.filter( c =>  c !== country.name.common).sort(() => Math.random() - 0.5).slice(0, 3);
 
@@ -36,11 +44,12 @@ export const useQuestionStore = create<State>((set, get) => ({
             return {
                 question,
                 correctAnswer: indexAnswer,
-                answers
+                answers,
+                flag: country.flags.svg
             }
         })
 
-        set({ questions });
+        set({ questions, isFlagQuiz });
 
     },
     goNextQuestion: () => {
@@ -51,7 +60,7 @@ export const useQuestionStore = create<State>((set, get) => ({
             return set({ currentQuestion: nextQuestion});
         }
 
-        set({ isGameOver: true });
+        set({ isGameOver: true, isFlagQuiz: false });
 
     },
     checkAnswer: (userSelectedAnswer: number) => {

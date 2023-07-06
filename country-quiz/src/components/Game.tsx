@@ -5,14 +5,22 @@ import { QuizLayout } from "../layout/QuizLayout";
 const LETTERS_OF_QUESTIONS = ["A", "B", "C", "D"];
 
 export const Game = () => {
-  const { questions, currentQuestion, goNextQuestion, checkAnswer } = useQuestionStore();
+
+  const { questions, 
+          currentQuestion, 
+          goNextQuestion, 
+          checkAnswer,
+          isFlagQuiz } = useQuestionStore();
+
+
+  const question = questions[currentQuestion];
 
   const isQuestionAnswered = useMemo(() => {
     return questions[currentQuestion].userSelectedAnswer != null
   }, [questions[currentQuestion].userSelectedAnswer]);
 
   const getBackground = (index: number) => {
-    const {correctAnswer, userSelectedAnswer} = questions[currentQuestion]
+    const {correctAnswer, userSelectedAnswer} = question;
 
     if (userSelectedAnswer ==null) return '';
 
@@ -27,7 +35,16 @@ export const Game = () => {
 
   return (
     <QuizLayout>
-      <h4>{questions[currentQuestion].question}</h4>
+      {
+        isFlagQuiz &&
+        (
+          <img
+            className="flag" 
+            src={question.flag} 
+            alt='country flag' />
+        )
+      }
+      <h4>{question.question}</h4>
       <ul className="questions__container">
         {
           questions[currentQuestion].answers.map( (answer, index) => (
