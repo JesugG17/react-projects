@@ -119,9 +119,14 @@ body {
   cursor: pointer;
   color: #fff;
   font-weight: bold;
+  transition: 0.3s all ease;
   font-size: 18px;
   box-shadow: 3px 3px 10px rgba(252, 168, 47, 0.4);
   
+}
+
+.next__button:hover {
+  background-color: #f6b142;
 }
 
 .button__container {
@@ -181,6 +186,17 @@ body {
 
 
 button[disabled] {
-  opacity: .3;
+  opacity: .6;
   pointer-events: none;
 }
+
+
+.winner {
+  display: flex;
+  flex-direction: column;
+}
+
+.winner img {
+  margin-top: 20px;
+}
+

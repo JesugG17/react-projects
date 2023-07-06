@@ -1,17 +1,25 @@
-import { FC, PropsWithChildren } from "react"
+import { FC } from "react"
 
-export const QuizLayout: FC<Props> = ({ children }) => {
+export const QuizLayout: FC<Props> = ({ children, containsImg = true }) => {
   return (
     <>
         <h1>COUNTRY QUIZ</h1>
         <section className="card">
-            <figure>
-                <img src="./adventure.svg" alt="" />
-            </figure>
+            {
+              containsImg &&
+              (
+                <figure>
+                    <img src="./adventure.svg" alt="" />
+                </figure>
+              )
+            }
             {children}
         </section>
     </>
   )
 }
 
-type Props = PropsWithChildren;
+type Props = {
+  children: React.ReactNode;
+  containsImg?: boolean;
+};

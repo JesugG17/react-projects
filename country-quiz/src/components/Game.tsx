@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useQuestionStore } from "../store/questions";
+import { QuizLayout } from "../layout/QuizLayout";
 
 const LETTERS_OF_QUESTIONS = ["A", "B", "C", "D"];
 
@@ -15,18 +16,17 @@ export const Game = () => {
 
     if (userSelectedAnswer ==null) return '';
 
-    if (userSelectedAnswer === correctAnswer && index === correctAnswer) return 'green';
+    if (userSelectedAnswer === correctAnswer && index === correctAnswer) return '#09d709';
 
-    if (index === correctAnswer) return 'green';
+    if (index === correctAnswer) return '#09d709';
     
-    if (userSelectedAnswer !== correctAnswer && index === userSelectedAnswer) return 'red';
+    if (userSelectedAnswer !== correctAnswer && index === userSelectedAnswer) return '#f72b2b';
 
     return '';
   }
 
-
   return (
-    <>
+    <QuizLayout>
       <h4>{questions[currentQuestion].question}</h4>
       <ul className="questions__container">
         {
@@ -56,6 +56,6 @@ export const Game = () => {
         </button>
       </div>  
       
-    </>
+    </QuizLayout>
   );
 };
