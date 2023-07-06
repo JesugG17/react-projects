@@ -1,9 +1,7 @@
-import { Game } from "./components"
-import { Home } from "./components/Home"
 import { useQuestionStore } from "./store/questions"
-import { Results } from "./components/Results"
+import { Game, Home, Results } from "./components"
 
-export const CountryApp = () => {
+export const QuizApp = () => {
 
   const { questions, isGameOver } = useQuestionStore();
 
