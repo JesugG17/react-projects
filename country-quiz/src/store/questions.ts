@@ -6,12 +6,12 @@ import confetti from 'canvas-confetti';
 
 interface State {
     questions: Question[];
-    // countries: string[];
     currentQuestion: number;
     isGameOver: boolean;
     createQuestions: (limit: number, region?: string) => Promise<void>;
     goNextQuestion: () => void;
     checkAnswer: (userSelectedAnswer: number) => void;
+    resetGame: () => void;
 };
 
 
@@ -70,6 +70,13 @@ export const useQuestionStore = create<State>((set, get) => ({
             userSelectedAnswer
         }
         set({ questions: newQuestions });
+    },
+    resetGame: () => {
+        set({
+            questions: [],
+            currentQuestion: 0,
+            isGameOver: false
+        })
     }
 
 }));
