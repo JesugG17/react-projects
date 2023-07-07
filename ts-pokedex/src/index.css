@@ -68,7 +68,6 @@ body {
 .gallery__container {
   width: 80%;
   height: 60%;
-  /* outline: 1px solid black; */
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -85,7 +84,6 @@ body {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, .3);
   flex-direction: column;
   align-items: center;
-  /* outline: 1px solid black; */
 }
 
 .pokemon__card img {
