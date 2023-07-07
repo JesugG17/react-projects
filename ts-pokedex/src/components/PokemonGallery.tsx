@@ -12,9 +12,7 @@ export const PokemonGallery: FC<Props> = ({ page }) => {
   },[page]);
 
   const handleGetPokemons = async() => {
-    console.log({ page });
     const newPokemons = await getPokemons(page);
-
     setPokemon(newPokemons);
   }
 
