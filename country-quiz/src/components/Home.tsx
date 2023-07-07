@@ -7,8 +7,6 @@ import { Github, Linkedin } from "."
 const IS_FLAG_QUIZ = true;
 const IS_NOT_FLAG_QUIZ = false;
 
-
-
 export const Home = () => {
 
     const { createQuestions } = useQuestionStore();
@@ -51,7 +49,6 @@ export const Home = () => {
                     </a>
                 </div> 
             </footer>
-
         </section>
     </QuizLayout>
   )

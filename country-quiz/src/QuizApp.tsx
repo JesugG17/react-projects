@@ -1,5 +1,6 @@
 import { useQuestionStore } from "./store/questions"
 import { Game, Home, Results } from "./components"
+import { Footer } from "./components/Footer";
 
 export const QuizApp = () => {
 
@@ -16,7 +17,7 @@ export const QuizApp = () => {
       {
         isGameOver && <Results />
       }
-                
+      <Footer />  
     </main>
   )
 }

@@ -84,7 +84,8 @@ export const useQuestionStore = create<State>((set, get) => ({
         set({
             questions: [],
             currentQuestion: 0,
-            isGameOver: false
+            isGameOver: false,
+            isFlagQuiz: false
         })
     }
 
