@@ -1,15 +1,21 @@
 import { Pagination, PokemonGallery, SearchPokemon } from "./components"
-import { useState } from 'react';
+import { usePokemon } from "./hooks/usePokemon";
 
 export const Pokedex = () => {
+
+  const { pokemons, isLoading, refetch, setPage } = usePokemon();
   
-  const [page, setPage] = useState(0);
-  console.log(page);
   return (
     <main className="main__container">
       <SearchPokemon />
-      <PokemonGallery page={ page }/>
-      <Pagination setPage={ setPage }/>
+      <PokemonGallery 
+        pokemons={ pokemons }
+        isLoading={ isLoading }
+      />
+      <Pagination 
+        refetch={ refetch }
+        setPage={ setPage }
+      />
     </main>
   )
 }

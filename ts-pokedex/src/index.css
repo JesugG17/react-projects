@@ -30,6 +30,7 @@ body {
   align-items: center;
   gap: 10px;
   width: 100%;
+  padding: 10px;
   background-color: black;
   color: #fff;
 }
@@ -50,7 +51,7 @@ body {
   border-radius: 5px;
   background-color: #fff;
   margin: auto;
-  border: 1px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.404);
 
 }
 .search input {

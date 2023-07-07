@@ -9,8 +9,9 @@ export const getPokemons = async(page: number) => {
     const { data } = await api.get<PokeAPIResponse>(`?limit=8&offset=${offset}`);
     
     const pokemons: Pokemon[] = [];
+
     for (let i = 0; i < data.results.length; i++) {
-        const { data: pokemon } = await api<Pokemon>(`${data.results[i].name}`);
+        const { data: pokemon } = await api.get<Pokemon>(`${data.results[i].name}`);
 
         pokemons.push(pokemon);
         
