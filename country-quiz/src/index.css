@@ -264,7 +264,7 @@ button[disabled] {
 
 
 .footer {
-  position: fixed;
+  /* position: fixed;
   top: 660px;
   left: 30px;
   width: 200px;
@@ -278,7 +278,21 @@ button[disabled] {
   height: 60px;
   transition: 0.3s all ease;
   border: 1px solid #f6b142;
-  cursor: pointer;
+  cursor: pointer; */
+  position: fixed;
+  left: 16px;
+  bottom: 16px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, .7);
+  padding: 8px 24px;
+  border-radius: 12px;
+  opacity: .95;
+  gap: 5px;
+  transition: 0.3s all ease-in-out;
+  backdrop-filter: blur(8px);
 }
 
 .footer p {
@@ -315,5 +329,5 @@ svg {
 }
 
 svg:hover {
-  scale: 1.1;
+  scale: 1.2;
 }
