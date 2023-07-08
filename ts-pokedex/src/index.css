@@ -149,14 +149,13 @@ body {
   object-fit: contain;
 }
 
-.pokemon__card footer {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 50px;
   border-radius: 0 0 10px 10px;
-  background-color: yellow;
 }
 
 .pagination {
@@ -198,6 +197,7 @@ button[disabled] {
 
 .pokemon__card__personal {
   display: flex;
+  flex-direction: column;
   width: 50%;
   height: 400px;
   gap: 20px;
@@ -205,18 +205,52 @@ button[disabled] {
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-.pokemon__card__personal img {
-  width: 55%;
-  object-fit: cover;
+.pokemon__card__info {
+  display: flex;
+  width: 100%;
+  height: 300px;
 }
 
-.pokemon__card__personal div {
+.pokemon__card__personal img {
+  width: 55%;
+  object-fit: contain;
+}
+
+.info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 500;
   gap: 20px;
+  font-size: 24px;
+  font-weight: 5a00;
+}
+
+.info div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.info button {
+  margin: 0 autot;
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  transition: 0.3s all linear;
+}
+
+.info button:hover {
+  scale: 1.1
+}
+
+.pokemon__card__personal footer {
+  height: 100px;
+  border-radius: 0 0 10px 10px;
 }
 
 

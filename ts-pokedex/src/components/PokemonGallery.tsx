@@ -16,7 +16,7 @@ export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
 
   const onNavigate = (pokemon: Pokemon) => {
     const { name } = pokemon;
-    
+
     navigate(`/pokemon/${name}`);
   }
   
@@ -52,6 +52,7 @@ export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
                 />
               </figure>
               <footer
+                className='footer'
                 style={{
                   backgroundColor: TYPE_COLOR[type]
                 }}

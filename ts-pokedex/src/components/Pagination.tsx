@@ -15,6 +15,7 @@ export const Pagination: FC<Props> = ({ page, setPage, isLoading }) => {
         }}>
         Prev
       </button>
+      <strong>Page: { page + 1 }</strong>
       <button 
           disabled={ isLoading }
           onClick={() => {
