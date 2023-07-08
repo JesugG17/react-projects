@@ -8,14 +8,13 @@ export const getPokemons = async(page: number) => {
     const offset = page * 8;
     const { data } = await api.get<PokeAPIResponse>(`?limit=8&offset=${offset}`);
     
-    const pokemons: Pokemon[] = [];
-
-    for (let i = 0; i < data.results.length; i++) {
-        const { data: pokemon } = await api.get<Pokemon>(`${data.results[i].name}`);
-
-        pokemons.push(pokemon);
-        
-    }
+    const pokemons = await Promise.all(
+        data.results.map( async(result) => {
+            const { data: pokemon } = await api.get<Pokemon>(`${result.name}`);
+            
+            return pokemon;
+        })
+    );
     
     return pokemons;
 }
