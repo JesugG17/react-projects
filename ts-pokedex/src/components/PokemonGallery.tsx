@@ -1,13 +1,14 @@
 import { FC } from "react";
 import { Pokemon } from "../types/pokemon-interface";
+import { Spinner } from "./Icons";
 
 export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
 
   
   if (isLoading) {
     return (
-      <section className="gallery__container">
-        <h1>Cargando...</h1>
+      <section className="spinner">
+        <p><Spinner /></p>
       </section>
     )
   }

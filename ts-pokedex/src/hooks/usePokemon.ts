@@ -24,7 +24,7 @@ export const usePokemon = () => {
     return {
         pokemons,
         isLoading: isFetching,
-        refetch,
+        page,
         setPage,
         error
     }

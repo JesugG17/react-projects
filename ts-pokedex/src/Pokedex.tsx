@@ -3,7 +3,7 @@ import { usePokemon } from "./hooks/usePokemon";
 
 export const Pokedex = () => {
 
-  const { pokemons, isLoading, refetch, setPage } = usePokemon();
+  const { pokemons, isLoading, page, setPage } = usePokemon();
   
   return (
     <main className="main__container">
@@ -13,7 +13,8 @@ export const Pokedex = () => {
         isLoading={ isLoading }
       />
       <Pagination 
-        refetch={ refetch }
+        isLoading={ isLoading }
+        page={ page }
         setPage={ setPage }
       />
     </main>

@@ -76,6 +76,25 @@ body {
   flex-wrap: wrap;
 }
 
+.spinner {
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner p {
+  text-align: center;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .pokemon__card {
   align-items: center;
   background-color: #fff;
@@ -128,4 +147,18 @@ body {
 
 .pagination button:hover {
   background-color: #4ce89d;
+}
+
+
+button[disabled] {
+  pointer-events: none;
+}
+
+
+
+@media screen and (max-width: 780px) {
+  .pokemon__card {
+    width: 45%;
+    
+  }
 }

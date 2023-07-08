@@ -24,3 +24,12 @@ export const SearchIcon = () => {
     />
   )
 }
+
+export const Spinner = () => {
+  return (
+    <img 
+      src="/spinner.png" 
+      alt="spinner" 
+    />
+  )
+}
