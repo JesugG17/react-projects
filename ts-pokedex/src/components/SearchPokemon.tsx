@@ -15,7 +15,7 @@ export const SearchPokemon = () => {
                     placeholder='Search'
                 />
             </form>
-            
+        
         </div>
     </header>
   )

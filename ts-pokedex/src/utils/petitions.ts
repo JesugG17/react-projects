@@ -4,7 +4,7 @@ import { Pokemon } from "../types/pokemon-interface";
 
 
 export const getPokemons = async(page: number) => {
-
+    console.log(page);
     const offset = page * 8;
     const { data } = await api.get<PokeAPIResponse>(`?limit=8&offset=${offset}`);
     
