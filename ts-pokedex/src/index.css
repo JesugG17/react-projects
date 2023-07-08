@@ -133,6 +133,7 @@ body {
 
 .pokemon__info button:hover {
   background-color: black;
+  scale: 1.1;
 }
 
 
