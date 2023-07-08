@@ -4,14 +4,17 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-const queryClient = new QueryClient();
-
 import './index.css'
 import { AppRouter } from './router/AppRouter';
+import { AplicationLayout } from './layout/AplicationLayout';
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   // <React.StrictMode>
     <QueryClientProvider client={ queryClient }>
-      <RouterProvider router={AppRouter}/>
+      <AplicationLayout>
+        <RouterProvider router={AppRouter}/>
+      </AplicationLayout>
     </QueryClientProvider>
   // </React.StrictMode>
 )

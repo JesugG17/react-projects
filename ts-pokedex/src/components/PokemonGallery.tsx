@@ -1,4 +1,6 @@
 import { FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
 import { Pokemon } from "../types/pokemon-interface";
 import { Spinner } from "./Icons";
 import { TYPE_COLOR, TypeKey } from "../utils/color-footer";
@@ -6,10 +8,17 @@ import { TYPE_COLOR, TypeKey } from "../utils/color-footer";
 export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
 
 
+  const navigate = useNavigate();
   const [showInfo, setShowInfo] = useState({
     index: 0,
     show: false
   });
+
+  const onNavigate = (pokemon: Pokemon) => {
+    const { name } = pokemon;
+    
+    navigate(`/pokemon/${name}`);
+  }
   
   if (isLoading) {
     return (
@@ -53,7 +62,7 @@ export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
                 showInfo.show && showInfo.index === index && 
                 (
                   <div className='pokemon__info'>
-                    <button>show more</button>
+                    <button onClick={() => onNavigate(pokemon)}>show more</button>
                   </div>
                 )
               }

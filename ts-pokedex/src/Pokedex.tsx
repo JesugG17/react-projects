@@ -6,7 +6,7 @@ export const Pokedex = () => {
   const { pokemons, isLoading, page, setPage } = usePokemon();
   
   return (
-    <main className="main__container">
+    <>
       <SearchPokemon />
       <PokemonGallery 
         pokemons={ pokemons }
@@ -17,6 +17,6 @@ export const Pokedex = () => {
         page={ page }
         setPage={ setPage }
       />
-    </main>
+    </>
   )
 }

@@ -21,15 +21,16 @@ body {
 
 .search__container {
   width: 100%;
-  height: 150px;
+  height: 100px;
   /* margin-bottom: 20px; */
 }
 
-.search__container nav {
+.navbar {
   display: flex;
   align-items: center;
   gap: 10px;
   width: 100%;
+  height: 60px;
   padding: 10px;
   background-color: black;
   color: #fff;
@@ -185,6 +186,39 @@ body {
 button[disabled] {
   pointer-events: none;
 }
+
+
+.pokemon__container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon__card__personal {
+  display: flex;
+  width: 50%;
+  height: 400px;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon__card__personal img {
+  width: 55%;
+  object-fit: cover;
+}
+
+.pokemon__card__personal div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  gap: 20px;
+}
+
 
 
 

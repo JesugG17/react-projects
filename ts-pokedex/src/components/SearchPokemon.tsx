@@ -1,21 +1,22 @@
-import { PokedexIcon, SearchIcon } from './Icons';
+import { FormEvent } from 'react';
+import { SearchIcon } from './Icons';
 
 export const SearchPokemon = () => {
+
+    const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+    }
+
   return (
     <header className="search__container">
-        <nav>
-            <PokedexIcon />
-            <h1>Pokedex</h1>
-        </nav>
         <div className='search'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <SearchIcon />
                 <input 
                     type="text"
                     placeholder='Search'
                 />
             </form>
-        
         </div>
     </header>
   )
