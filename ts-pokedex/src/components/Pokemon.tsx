@@ -38,7 +38,7 @@ return (
             <div className="info">
                 <p><strong>Id:</strong> {pokemon.id}</p>
                 <p><strong>Name:</strong> {pokemon.name}</p>
-                <p><strong>Experience:</strong> {pokemon.base_experience} poins</p>
+                <p><strong>Experience:</strong> {pokemon.base_experience} points</p>
                 <p><strong>Height:</strong> {pokemon.height}</p>
                 <p><strong>Type:</strong> {pokemon.types[0].type.name}</p>
                 <div>

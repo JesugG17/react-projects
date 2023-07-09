@@ -14,19 +14,11 @@ export const usePokemon = () => {
         ["getPokemon"],
         () => getPokemons(page),
     );
-    
-    useEffect(() => {
-        const storage = localStorage.getItem('page') || 0;
-        if (storage !== 0) {
-            setPage(Number(storage));
-        }
-    }, []);
 
     useEffect(() => {
         refetch();
         localStorage.setItem('page', String(page));
     }, [page]);
-
 
     let pokemons: Pokemon[] = []
     if (data) {
