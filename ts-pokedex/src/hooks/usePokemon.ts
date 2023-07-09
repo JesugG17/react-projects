@@ -25,6 +25,7 @@ export const usePokemon = () => {
         pokemons = [...data];
     }
 
+    console.log(pokemons);
     return {
         pokemons,
         isLoading: isFetching,

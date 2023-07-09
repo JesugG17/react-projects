@@ -3,7 +3,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Pokemon as PokemonType } from "../types/pokemon-interface";
 import { getPokemonById } from "../utils/petitions";
-import { Spinner } from "./Icons";
 import { TYPE_COLOR, TypeKey } from "../utils/color-footer";
 import { Loading } from "./Loading";
 
@@ -29,7 +28,7 @@ return (
     <section className="pokemon__container">
     <div className="pokemon__card__personal">
         <div className="pokemon__card__info">
-            <img src={pokemon.sprites.back_default} alt="" />
+            <img src={pokemon.sprites.other?.dream_world.front_default} alt="" />
             <div className="info">
                 <p><strong>Id:</strong> {pokemon.id}</p>
                 <p><strong>Name:</strong> {pokemon.name}</p>
