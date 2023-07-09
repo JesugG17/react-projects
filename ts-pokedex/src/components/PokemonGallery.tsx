@@ -1,12 +1,11 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 
 import { Pokemon } from "../types/pokemon-interface";
-import { Spinner } from "./Icons";
 import { TYPE_COLOR, TypeKey } from "../utils/color-footer";
+import { Loading } from './Loading';
 
-export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
-
+export const PokemonGallery: FC<Props> = memo(({ pokemons, isLoading }) => {
 
   const navigate = useNavigate();
   const [showInfo, setShowInfo] = useState({
@@ -21,12 +20,9 @@ export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
   }
   
   if (isLoading) {
-    return (
-      <section className="spinner">
-        <p><Spinner /></p>
-      </section>
-    )
+    return <Loading />
   }
+
   return (
     <section className="gallery__container">
       {
@@ -73,7 +69,7 @@ export const PokemonGallery: FC<Props> = ({ pokemons, isLoading }) => {
       }
     </section>
   );
-};
+});
 
 type Props = {
   pokemons: Pokemon[];

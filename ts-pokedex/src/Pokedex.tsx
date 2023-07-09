@@ -4,7 +4,7 @@ import { usePokemon } from "./hooks/usePokemon";
 export const Pokedex = () => {
 
   const { pokemons, isLoading, page, setPage } = usePokemon();
-  
+
   return (
     <>
       <SearchPokemon />

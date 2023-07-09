@@ -5,18 +5,30 @@ import { Pokemon } from "../types/pokemon-interface";
 
 export const usePokemon = () => {
 
-    const [page, setPage] = useState(0);
-
+    const [page, setPage] = useState(() => {
+        const storage = localStorage.getItem('page');
+        return Number(storage) ?? 0;
+    });
+    
     const { data, isFetching, refetch, error } = useQuery(
         ["getPokemon"],
         () => getPokemons(page),
     );
+    
+    useEffect(() => {
+        const storage = localStorage.getItem('page') || 0;
+        if (storage !== 0) {
+            setPage(Number(storage));
+        }
+    }, []);
 
     useEffect(() => {
         refetch();
+        localStorage.setItem('page', String(page));
     }, [page]);
 
-    let pokemons: Pokemon[] = [];
+
+    let pokemons: Pokemon[] = []
     if (data) {
         pokemons = [...data];
     }

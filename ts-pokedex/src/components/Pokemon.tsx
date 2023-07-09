@@ -36,11 +36,11 @@ return (
         <div className="pokemon__card__info">
             <img src={pokemon.sprites.front_default} alt="" />
             <div className="info">
-                <p>Id: {pokemon.id}</p>
-                <p>Name: {pokemon.name}</p>
-                <p>Experience: {pokemon.base_experience} poins</p>
-                <p>Height: {pokemon.height}</p>
-                <p>Type: {pokemon.types[0].type.name}</p>
+                <p><strong>Id:</strong> {pokemon.id}</p>
+                <p><strong>Name:</strong> {pokemon.name}</p>
+                <p><strong>Experience:</strong> {pokemon.base_experience} poins</p>
+                <p><strong>Height:</strong> {pokemon.height}</p>
+                <p><strong>Type:</strong> {pokemon.types[0].type.name}</p>
                 <div>
                     <button
                         style={{
