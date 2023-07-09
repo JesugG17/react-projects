@@ -1,4 +1,4 @@
-import { Pagination, SearchPokemon } from "./components"
+import { Pagination, PokemonGallery } from "./components"
 import { usePokemon } from "./hooks/usePokemon";
 
 export const Pokedex = () => {
@@ -8,10 +8,15 @@ export const Pokedex = () => {
 
   return (
     <>
-      <SearchPokemon 
+      {/* <SearchPokemon 
         pokemons={ pokemons }
         isLoading={ isLoading }
         page={ page }
+      /> */}
+
+      <PokemonGallery 
+            pokemons={ pokemons }
+            isLoading={ isLoading }
       />
     
       <Pagination 
