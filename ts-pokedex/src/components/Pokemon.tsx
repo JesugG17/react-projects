@@ -5,6 +5,7 @@ import { Pokemon as PokemonType } from "../types/pokemon-interface";
 import { getPokemonById } from "../utils/petitions";
 import { Spinner } from "./Icons";
 import { TYPE_COLOR, TypeKey } from "../utils/color-footer";
+import { Loading } from "./Loading";
 
 export const Pokemon = () => {
 
@@ -19,13 +20,7 @@ export const Pokemon = () => {
     }, []);
 
     if (!pokemon) {
-        return (
-        <section className="spinner">
-            <p>
-                <Spinner />
-            </p>
-        </section>
-        );
+        return <Loading />
     }
 
     const color = TYPE_COLOR[pokemon.types[0].type.name as TypeKey];
@@ -34,7 +29,7 @@ return (
     <section className="pokemon__container">
     <div className="pokemon__card__personal">
         <div className="pokemon__card__info">
-            <img src={pokemon.sprites.front_default} alt="" />
+            <img src={pokemon.sprites.back_default} alt="" />
             <div className="info">
                 <p><strong>Id:</strong> {pokemon.id}</p>
                 <p><strong>Name:</strong> {pokemon.name}</p>
