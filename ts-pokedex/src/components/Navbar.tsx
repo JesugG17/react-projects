@@ -1,6 +1,8 @@
 import { PokedexIcon } from "./Icons";
 
 export const Navbar = () => {
+
+
   return (
     <nav className="navbar">
       <PokedexIcon />

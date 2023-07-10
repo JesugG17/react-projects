@@ -69,7 +69,8 @@ body {
 
 .gallery__container {
   width: 80%;
-  height: 70%;
+  height: 80%;
+  margin-top: 20px;
   display: flex;
   gap: 10px;
   justify-content: space-between;
@@ -161,8 +162,11 @@ body {
 .pagination {
   display: flex;
   width: 80%;
-  margin-top: 20px;
+  margin-top: 10px;
   gap: 20px;
+  position: fixed;
+  align-items: center;
+  bottom: 16px;
 }
 
 .pagination button {
