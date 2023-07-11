@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { jobsApi } from "./api/jobs.api";
 import { Job } from "./types/jobs.interface";
+import { JobCard } from "./components/JobCard";
 
 export const JobsApp = () => {
 
@@ -27,8 +28,9 @@ export const JobsApp = () => {
     const limit = offset + 5;
 
   return (
-    <div>
+    <div className="w-full h-screen flex flex-col items-center bg-slate-200">
         <button
+            className="px-2 py-4 bg-slate-300 rounded-md"
             onClick={() => setPage( page + 1) }
         >
             Siguiente pagina
@@ -36,9 +38,10 @@ export const JobsApp = () => {
         <ul>
             {
                 jobs.slice(offset, limit).map( job => (
-                    <li>
-                        {job.job_title}
-                    </li>
+                    <JobCard
+                        job={ job }
+                        key={ job.job_id }
+                    />
                 ))
             }
         </ul>

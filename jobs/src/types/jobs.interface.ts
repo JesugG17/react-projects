@@ -2,7 +2,7 @@
 
 export interface Job {
     employer_name:                        string;
-    employer_logo:                        null;
+    employer_logo:                        string;
     employer_website:                     null;
     employer_company_type:                null;
     job_publisher:                        string;
