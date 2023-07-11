@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Job } from "../types/jobs.interface";
 
-export const defaultImage = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Walmart_logo.svg/2560px-Walmart_logo.svg.png";
+export const defaultImage = "/defaultLogo.jpg";
 
 export const JobCard: FC<Props>  = ({ job }) => {
 
@@ -10,7 +10,7 @@ export const JobCard: FC<Props>  = ({ job }) => {
                     : job.job_title;
     console.log(job);
   return (
-    <li className="w-[790px] h-[114px] justify-between rounded-md flex mt-4 bg-white p-3">
+    <li className="min-w-full h-[114px] justify-between rounded-md flex mt-4 bg-white p-3">
       <div className="flex gap-2">
         <figure className="bg-white rounded-md p-1">
           <img

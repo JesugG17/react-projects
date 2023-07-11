@@ -7,7 +7,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        'violet-custom': '#334680'
+        'violet-custom': '#334680',
+        'search': '#1E86FF'
+      },
+      backgroundImage: {
+        'hero': 'url(/backgroundImg.png)'
       }
     },
   },
