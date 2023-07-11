@@ -10,4 +10,4 @@ export const AplicationLayout: FC<Props>  = ({ children }) => {
   )
 }
 
-type Props = PropsWithChildren
+type Props = PropsWithChildren;

@@ -49,7 +49,7 @@ return (
         </div>
         <footer
             style={{
-                backgroundColor: TYPE_COLOR[pokemon.types[0].type.name as TypeKey]
+                backgroundColor: color
             }} 
         >
         </footer>
