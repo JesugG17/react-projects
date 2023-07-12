@@ -1,6 +1,6 @@
 export const Filters = () => {
   return (
-    <div className="w-1/4">
+    <aside className="w-1/4">
       <input type="checkbox" />
       <label htmlFor=""> Full time</label>
       <h4>Location</h4>
@@ -23,6 +23,6 @@ export const Filters = () => {
           <label htmlFor="">Berlin</label>
         </li>
       </ul>
-    </div>
+    </aside>
   );
 };

@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         'violet-custom': '#334680',
-        'search': '#1E86FF'
+        'search': '#1E86FF',
+        'background': '#F6F7FB',
+        'text': '#B9BDCF'
       },
       backgroundImage: {
         'hero': 'url(/backgroundImg.png)'
