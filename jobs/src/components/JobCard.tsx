@@ -2,6 +2,7 @@ import { FC } from 'react'
 import { Job } from "../types/jobs.interface";
 import { getJobNormalized } from '../utils/getJobNormalized';
 import { useNavigate } from 'react-router';
+import { DateTime } from 'luxon';
 
 export const defaultImage = "/defaultLogo.jpg";
 
@@ -9,10 +10,15 @@ export const JobCard: FC<Props>  = ({ job }) => {
 
     const navigate = useNavigate();
     const titleJob = getJobNormalized(job.job_title);
+    
     const onNavigate = () => {
       const jobId = job.job_id;
       navigate(`/jobs/${jobId}`);
     }
+
+    const now = DateTime.fromISO(new Date().toISOString());
+    const jobPosted = DateTime.fromISO(job.job_posted_at_datetime_utc);
+    const { days } = now.diff(jobPosted, 'days').toObject();
 
   return (
     <li
@@ -42,7 +48,7 @@ export const JobCard: FC<Props>  = ({ job }) => {
       </div>
       <div className="h-full flex items-end gap-5 mr-3 mb-3">
         <p className="text-gray-300">{ job.job_city }</p>
-        <p className="text-gray-300">5 days</p>
+        <p className="text-gray-300">{ Math.ceil(days as number) } days ago</p>
       </div>
     </li>
   );

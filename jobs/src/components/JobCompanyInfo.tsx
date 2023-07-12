@@ -9,9 +9,14 @@ export const JobCompanyInfo: FC<Props> = ({ job }) => {
         <h3 className="text-violet-custom font-bold text-2xl">
           {job.job_title}
         </h3>
-        <p className="w-[80px] h-[30px] text-center font-bold text-sm border-2 border-violet-custom p-1 rounded-md">
-          full time
-        </p>
+        {
+            job.job_employment_type === 'FULLTIME' &&
+            (
+                <p className="w-[80px] h-[30px] text-center font-bold text-sm border-2 border-violet-custom p-1 rounded-md">
+                    full time
+                </p>
+            )
+        }
       </div>
       <div className="flex gap-3">
         <img
