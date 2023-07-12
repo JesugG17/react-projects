@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { Job } from '../types/jobs.interface';
-import { FaFileWord } from 'react-icons/fa';
+import { Earth } from './Icons';
 
 export const Filters: FC<Props> = ({ jobs }) => {
 
@@ -16,11 +16,7 @@ export const Filters: FC<Props> = ({ jobs }) => {
       <div>
         <h4 className='text-text font-bold mb-1'>LOCATION</h4>
         <div className='flex items-center bg-white px-2 border-2 border-violet-custom rounded-md'>
-          <img
-            className='object-contain w-4 h-4' 
-            src="/earth.png" 
-            alt=""
-          />
+          <Earth />
           <input
             className='w-full p-3 focus:outline-none' 
             placeholder="City, state, zip code or country" 

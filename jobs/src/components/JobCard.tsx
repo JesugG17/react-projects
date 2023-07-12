@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { DateTime } from 'luxon';
 import { Job } from "../types/jobs.interface";
 import { getJobNormalized } from '../utils/getJobNormalized';
+import { Clock, Earth } from './Icons';
 
 export const defaultImage = "/defaultLogo.jpg";
 
@@ -47,8 +48,19 @@ export const JobCard: FC<Props>  = ({ job }) => {
         </div>
       </div>
       <div className="h-full flex items-end gap-5 mr-3 mb-3">
-        <p className="text-gray-300">{ job.job_city }</p>
-        <p className="text-gray-300">{ Math.ceil(days as number) } days ago</p>
+        {
+          job.job_city !== null && 
+          (
+          <div className='flex items-center gap-2'>
+            <Earth opacity='30'/>
+            <p className="text-gray-300">{ job.job_city }</p>
+          </div>
+          )
+        }
+        <div className='flex items-center gap-2'>
+          <Clock />
+          <p className="text-gray-300">{ Math.ceil(days as number) } days ago</p>
+        </div>
       </div>
     </li>
   );
