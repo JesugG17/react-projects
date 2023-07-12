@@ -1,16 +1,26 @@
-import { FC } from 'react';
-import { Job } from '../types/jobs.interface';
+import { useEffect, useState } from 'react';
 import { Earth } from './Icons';
+import { useJobs } from '../hooks/useJobs';
 
-export const Filters: FC<Props> = ({ jobs }) => {
+export const Filters = () => {
 
+  const { filterJobs, jobs } = useJobs();
+  const [checked, setChecked] = useState(false);
   const cities = jobs.map( job => job.job_city);
   const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
+
+  useEffect(() => {
+    filterJobs({ filterBy: 'job_employment_type', value: 'FULLTIME'})
+  }, [checked]);
 
   return (
     <aside className="w-1/4 text-violet-custom flex flex-col gap-3">
       <div>
-        <input type="checkbox" />
+        <input
+          checked={checked}
+          onChange={() => setChecked(!checked)}
+          type="checkbox" 
+        />
         <label htmlFor=""> Full time</label>
       </div>
       <div>
@@ -41,7 +51,3 @@ export const Filters: FC<Props> = ({ jobs }) => {
     </aside>
   );
 };
-
-type Props = {
-  jobs: Job[];
-}
