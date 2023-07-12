@@ -1,16 +1,24 @@
 import { FC } from 'react'
 import { Job } from "../types/jobs.interface";
+import { getJobNormalized } from '../utils/getJobNormalized';
+import { useNavigate } from 'react-router';
 
 export const defaultImage = "/defaultLogo.jpg";
 
 export const JobCard: FC<Props>  = ({ job }) => {
 
-    const titleJob = job.job_title.length > 40
-                    ? job.job_title.substring(0, 40) + '...'
-                    : job.job_title;
-    console.log(job);
+    const navigate = useNavigate();
+    const titleJob = getJobNormalized(job.job_title);
+    const onNavigate = () => {
+      const jobId = job.job_id;
+      navigate(`/jobs/${jobId}`);
+    }
+
   return (
-    <li className="min-w-full h-[114px] justify-between rounded-md flex mt-4 bg-white p-3">
+    <li
+      onClick={onNavigate} 
+      className="min-w-full h-[114px] justify-between rounded-md flex mt-4 bg-white p-3 cursor-pointer hover:bg-slate-50"
+    >
       <div className="flex gap-2">
         <figure className="bg-white rounded-md p-1">
           <img
