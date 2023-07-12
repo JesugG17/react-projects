@@ -28,10 +28,10 @@ export const JobsApp = () => {
     const limit = offset + 5;
 
   return (
-    <main className="w-full h-screen flex flex-col items-center bg-slate-200 gap-5">
-        <section className="w-3/4 flex flex-col p-5 gap-5">
-            <h1 className="text-2xl mb-7"><strong>Rapid</strong> Jobs</h1>
-            <div className="w-full h-[130px] bg-hero bg-no-repeat bg-center flex justify-center items-center rounded-md">
+    <main className="h-screen flex flex-col items-center bg-slate-200 gap-1">
+        <section className="w-3/4 flex flex-col p-4 gap-5">
+            <h1 className="text-2xl mb-3 mt-2"><strong>Rapid</strong> Jobs</h1>
+            <div className="h-[130px] bg-hero bg-no-repeat bg-center flex justify-center items-center rounded-md">
                 <div className="w-3/4 h-2/5 bg-white p-1 flex justify-between rounded">
                     <input
                         className="w-3/4 bg-transparent focus:outline-none p-2"
@@ -42,7 +42,7 @@ export const JobsApp = () => {
                 </div>
             </div>
         </section>
-        <section className="w-3/4 flex gap-3">
+        <section className="w-3/4 flex gap-3 p-4">
             <div className="w-1/4">
                 <input type="checkbox"/>
                 <label htmlFor=""> Full time</label>
@@ -80,12 +80,20 @@ export const JobsApp = () => {
                         ))
                     }
                 </ul>
+                <footer className="flex justify-end gap-5 p-4">
+                    <button onClick={() => {
+                        setPage( page === 0 ? page : page -  1 );
+                    }}>prev</button>
+                    <button
+                        onClick={() => {
+                            setPage( page === 26 ? page : page + 1 );
+                        }}
+                    >
+                        next</button>
+                </footer>   
             </div>
         </section>
-        <footer className="w-3/4 flex justify-end gap-5">
-            <button>prev</button>
-            <button>next</button>
-        </footer>   
+       
     </main>
   )
 }
