@@ -22,7 +22,7 @@ export const JobsContainer = () => {
 
   return (
     <section className="w-3/4 flex gap-3 p-4">
-      <Filters />
+      <Filters jobs={ jobs }/>
       <div className="w-3/4">
         <ul>
           {jobs.slice(offset, limit).map((job) => (

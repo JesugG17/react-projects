@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { Job } from "../types/jobs.interface";
-import { getJobNormalized } from '../utils/getJobNormalized';
 import { useNavigate } from 'react-router';
 import { DateTime } from 'luxon';
+import { Job } from "../types/jobs.interface";
+import { getJobNormalized } from '../utils/getJobNormalized';
 
 export const defaultImage = "/defaultLogo.jpg";
 
@@ -10,7 +10,7 @@ export const JobCard: FC<Props>  = ({ job }) => {
 
     const navigate = useNavigate();
     const titleJob = getJobNormalized(job.job_title);
-    
+
     const onNavigate = () => {
       const jobId = job.job_id;
       navigate(`/jobs/${jobId}`);
