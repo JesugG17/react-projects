@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { JobsContext } from "../context/JobsContext";
 import { Filters } from "./Filters";
 import { Footer } from "./Footer";
@@ -6,10 +6,19 @@ import { JobCard } from "./JobCard";
 
 export const JobsContainer = () => {
 
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(() => {
+      const storage = localStorage.getItem('page');
+
+      return Number(storage) ?? 0;
+    });
+    
     const { jobs } = useContext(JobsContext);
     const offset = page * 5;
     const limit = offset + 5;
+
+    useEffect(() => {
+      localStorage.setItem('page', String(page));
+    }, [page]);
 
   return (
     <section className="w-3/4 flex gap-3 p-4">

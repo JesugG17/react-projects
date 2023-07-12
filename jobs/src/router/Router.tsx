@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { JobsApp } from "../JobsApp";
-import { Job } from "../components/Job";
+import { JobView } from "../components/JobView";
 
 export const Router = createBrowserRouter([
     {
@@ -12,7 +12,7 @@ export const Router = createBrowserRouter([
     {
         path: '/jobs/:id',
         element: (
-            <Job />
+            <JobView />
         )
     },
     {

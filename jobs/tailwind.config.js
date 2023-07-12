@@ -9,8 +9,9 @@ export default {
       colors: {
         'violet-custom': '#334680',
         'search': '#1E86FF',
+        'search-hover': '#4397f8',
         'background': '#F6F7FB',
-        'text': '#B9BDCF'
+        'text': '#B9BDCF',
       },
       backgroundImage: {
         'hero': 'url(/backgroundImg.png)'
