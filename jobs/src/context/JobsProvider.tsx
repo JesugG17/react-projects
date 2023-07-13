@@ -13,14 +13,13 @@ export const JobsProvider: FC<Props> = ({ children }) => {
 
     const [page, setPage] = useState(() => {
         const storage = localStorage.getItem('page');
-  
         return Number(storage) ?? 0;
     });
 
     useEffect(() => {
         localStorage.setItem('page', String(page));
     }, [page]);
-
+    
     useEffect(() => {
         if (jobs.length === 0) {
             jobsApi.get('')

@@ -35,7 +35,7 @@ export const JobCompanyInfo: FC<Props> = ({ job }) => {
       <div className="flex gap-3">
         <img
           className="w-[52px] h-[52px] rounded-sm object-contain"
-          src={job.employer_logo}
+          src={job.employer_logo ?? '/defaultLogo.jpg'}
           alt=""
         />
         <div>
