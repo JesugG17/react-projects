@@ -11,21 +11,32 @@ export const JobsProvider: FC<Props> = ({ children }) => {
         return JSON.parse(storage);
     });
 
+    const [page, setPage] = useState(() => {
+        const storage = localStorage.getItem('page');
+  
+        return Number(storage) ?? 0;
+    });
+
+    useEffect(() => {
+        localStorage.setItem('page', String(page));
+    }, [page]);
+
     useEffect(() => {
         if (jobs.length === 0) {
             jobsApi.get('')
-            .then( ({ data }) => setJobs(data.data));
+            .then( ({ data }) => {
+                setJobs(data.data);
+                localStorage.setItem('jobs', JSON.stringify(data.data));
+            });
         }
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem('jobs', JSON.stringify(jobs));
-    }, [jobs]);
-  
+      
 return (
     <JobsContext.Provider value={{
         jobs,
-        setJobs
+        setJobs,
+        page,
+        setPage
     }}>
         { children }
     </JobsContext.Provider>

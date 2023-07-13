@@ -1,6 +1,6 @@
 import { FC } from 'react';
 export const Footer: FC<Props> = ({ setPage, currentPage, maxPage }) => {
-  console.log({currentPage, maxPage});
+  
   return (
     <footer className="flex justify-end gap-5 p-4">
       <button

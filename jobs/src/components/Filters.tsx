@@ -39,7 +39,7 @@ export const Filters = () => {
       <ul>
         
         {
-          differentCities.map( city => (
+          differentCities.map( (city) => (
             <li
               className='flex gap-3 font-medium' 
               key={ city }

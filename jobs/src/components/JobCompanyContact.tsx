@@ -7,7 +7,7 @@ export const JobCompanyContact: FC<Props> = ({ job }) => {
   return (
     <div className="w-1/5 flex flex-col">
       <Link
-        className="font-bold text-search flex gap-2 items-center hover:text-search-hover transition-all duration-300"
+        className="font-bold text-search text-[14px] flex gap-2 items-center hover:text-search-hover transition-all duration-300"
         to="/jobs"
       >
         <FaArrowLeft />
@@ -16,7 +16,7 @@ export const JobCompanyContact: FC<Props> = ({ job }) => {
       <p className="text-text mt-5">How to apply</p>
       <p>
         Please email a copy of your resume and online portofolio to the
-        following
+        following link:
       </p>
       <Link
         className="text-violet-custom font-medium mt-3"
