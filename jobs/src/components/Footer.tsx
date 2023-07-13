@@ -4,7 +4,6 @@ import { LeftArrow, RightArrow } from './Icons';
 
 export const Footer: FC<Props> = ({ setPage, currentPage, maxPage }) => {
 
-  const buttonsNumbers = [currentPage + 1 , currentPage + 2, currentPage + 3];
 
 
   return (
@@ -19,31 +18,7 @@ export const Footer: FC<Props> = ({ setPage, currentPage, maxPage }) => {
         <LeftArrow />
       </button>
       
-      {
-        buttonsNumbers.map( number => (
-          <button 
-            key={number}
-            className={`border-2 w-[36px] h-[36px] text-text flex items-center justify-center rounded-md cursor-pointer ${ currentPage ===  number  - 1 ? 'bg-search text-white border-search' :  'hover:bg-search hover:border-search hover:text-white '}`}
-            onClick={() => setPage(number - 1)}
-          >
-            { number }
-          </button>
-        ))
-      }
-      {
-        currentPage + 3 !== maxPage +  1 && 
-        (
-          <div className='flex gap-3'>
-            ...
-            <button 
-              className='border-2 w-[36px] h-[36px] text-text flex items-center justify-center rounded-md cursor-pointer hover:border-search hover:text-white hover:bg-search'
-              onClick={() => setPage(maxPage)}
-            >
-              { maxPage + 1}
-            </button>
-          </div>
-        )
-      }
+      <p className='text-text'>{ currentPage + 1 } / { maxPage + 1 }</p>
      
       <button
         className='border-2 w-[36px] h-[36px] flex items-center justify-center rounded-md cursor-pointer hover:border-search'

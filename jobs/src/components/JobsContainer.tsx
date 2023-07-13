@@ -7,7 +7,6 @@ export const JobsContainer = () => {
 
     const { jobs, setPage, offset, limit, maxPage, page } = useJobs();
     
-    console.log({page});
   return (
     <section className="min-h-screen w-3/4 flex gap-3 p-4">
       <Filters />

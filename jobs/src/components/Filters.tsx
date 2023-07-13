@@ -6,13 +6,15 @@ export const Filters = () => {
 
   const { filterJobs, allJobs } = useJobs();
   const [checked, setChecked] = useState(false);
+  const [citySelected, setCitySelected] = useState('All cities');
 
   const cities = allJobs.map( job => job.job_city as string);
   const differentCities: string[] = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
   differentCities.unshift('All cities');
   
   useEffect(() => {
-    filterJobs({ filterBy: 'job_employment_type', value: `${ checked ? 'FULLTIME' : 'all'}`})
+    filterJobs({ filterBy: 'job_employment_type', value: `${ checked ? 'FULLTIME' : 'all'}`});
+    setCitySelected('All cities');
   }, [checked]);
 
   return (
@@ -44,7 +46,9 @@ export const Filters = () => {
               className='flex gap-3 font-medium' 
               key={ city }
             >
-              <input 
+              <input
+                checked={ city === citySelected }
+                onClick={() => setCitySelected(city)}
                 className='w-4' 
                 type="radio" name='city'
                 onChange={() => filterJobs({ filterBy: 'job_city', value: city === 'All cities' ? 'all' : city})}

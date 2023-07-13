@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { JobsContext } from "../context/JobsContext"
-import { Filter } from "../types/filter.type";
+import { Filter } from '../types/filter.type';
 
 export const useJobs = () => {
     const { jobs, setJobs, page, setPage } = useContext(JobsContext);
@@ -31,7 +31,7 @@ export const useJobs = () => {
         page,
         setPage,
         allJobs,
-        filterJobs
+        filterJobs,
     }
 
 }
