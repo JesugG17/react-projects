@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { JobsContext } from "../context/JobsContext"
 import { Filter } from "../types/filter.type";
 
@@ -12,6 +12,7 @@ export const useJobs = () => {
     
     const filterJobs = (filter: Filter) => {
         
+        setPage(0);
         if (filter.value === 'all') return setJobs(allJobs);
         
         const newJobs = allJobs.filter( job => {
@@ -19,7 +20,6 @@ export const useJobs = () => {
             
             return job[filterBy] === value;
         });
-        setPage(0);
         setJobs(newJobs);
     }
 

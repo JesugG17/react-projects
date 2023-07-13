@@ -9,6 +9,19 @@ export const Clock = () => {
 }
 
 
+export const LeftArrow = () => {
+  return (
+    <img className='object-contain w-4 h-4 opacity-40' src="/left-arrow.png" alt="left arrow icon" />
+  )
+}
+
+export const RightArrow = () => {
+  return (
+    <img className='object-contain w-4 h-4 opacity-40' src="/right-arrow.png" alt="right arrow icon" />
+  )
+}
+
+
 type EarthProps = {
     opacity?: string
 }
