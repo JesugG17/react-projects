@@ -1,26 +1,45 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { JobsContext } from "../context/JobsContext"
 import { Filter } from "../types/filter.type";
-import { Job } from "../types/jobs.interface";
 
 export const useJobs = () => {
-    const { jobs } = useContext(JobsContext);
-    const [filteredJobs, setFilteredJobs] = useState<Job[]>(jobs);
+    const { jobs, setJobs } = useContext(JobsContext);
+    const [allJobs] = useState(jobs);
+    const [page, setPage] = useState(() => {
+        const storage = localStorage.getItem('page');
+  
+        return Number(storage) ?? 0;
+    });
+    const offset = page * 5;
+    const limit = offset + 5;
+    const maxPage = Math.floor(jobs.length / 5);
+
+    useEffect(() => {
+      localStorage.setItem('page', String(page));
+    }, [page]);
+
+    
     const filterJobs = (filter: Filter) => {
 
-        if (filter.value === 'all') return setFilteredJobs(jobs)
+        localStorage.setItem('page', String(0));
+        if (filter.value === 'all') return setJobs(allJobs);
 
-        const newJobs = jobs.filter( job => {
+        const newJobs = allJobs.filter( job => {
             const { filterBy, value } = filter;
 
             return job[filterBy] === value;
         });
-
-        setFilteredJobs(newJobs);
+        setJobs(newJobs);
     }
 
     return {
-        jobs: filteredJobs,
+        jobs,
+        limit,
+        offset,
+        maxPage,
+        page,
+        setPage,
+        allJobs,
         filterJobs
     }
 

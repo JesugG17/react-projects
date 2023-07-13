@@ -4,13 +4,15 @@ import { useJobs } from '../hooks/useJobs';
 
 export const Filters = () => {
 
-  const { filterJobs, jobs } = useJobs();
+  const { filterJobs, allJobs } = useJobs();
   const [checked, setChecked] = useState(false);
-  const cities = jobs.map( job => job.job_city);
-  const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
 
+  const cities = allJobs.map( job => job.job_city as string);
+  const differentCities: string[] = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
+  differentCities.unshift('All cities');
+  
   useEffect(() => {
-    filterJobs({ filterBy: 'job_employment_type', value: 'FULLTIME'})
+    filterJobs({ filterBy: 'job_employment_type', value: `${ checked ? 'FULLTIME' : 'all'}`})
   }, [checked]);
 
   return (
@@ -42,7 +44,11 @@ export const Filters = () => {
               className='flex gap-3 font-medium' 
               key={ city }
             >
-              <input className='w-4' type="radio" name='city'/>
+              <input 
+                className='w-4' 
+                type="radio" name='city'
+                onChange={() => filterJobs({ filterBy: 'job_city', value: city === 'All cities' ? 'all' : city})}
+              />
               <label>{ city }</label>
             </li>
           ))

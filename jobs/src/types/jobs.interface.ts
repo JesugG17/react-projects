@@ -15,7 +15,7 @@ export interface Job {
     job_is_remote:                        boolean;
     job_posted_at_timestamp:              number;
     job_posted_at_datetime_utc:           string;
-    job_city:                             null;
+    job_city:                             string | null;
     job_state:                            null;
     job_country:                          string;
     job_latitude:                         number;

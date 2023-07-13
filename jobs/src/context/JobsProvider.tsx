@@ -25,6 +25,7 @@ export const JobsProvider: FC<Props> = ({ children }) => {
 return (
     <JobsContext.Provider value={{
         jobs,
+        setJobs
     }}>
         { children }
     </JobsContext.Provider>
