@@ -7,7 +7,7 @@ export const Filters = () => {
   const { filterJobs, filterJobsByCity, allJobs } = useJobs();
   const [checked, setChecked] = useState(false);
   const [citySelected, setCitySelected] = useState('All cities');
-
+  
   const differentCities = useMemo(() => {
     const cities = allJobs.map( job => job.job_city as string);
     const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
@@ -47,7 +47,7 @@ export const Filters = () => {
         </div>
       </div>
       <ul>
-        
+
         {
           differentCities.map( (city) => (
             <li
