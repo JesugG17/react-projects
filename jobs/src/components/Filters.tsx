@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Earth } from './Icons';
 import { useJobs } from '../hooks/useJobs';
 
@@ -8,9 +8,12 @@ export const Filters = () => {
   const [checked, setChecked] = useState(false);
   const [citySelected, setCitySelected] = useState('All cities');
 
-  const cities = allJobs.map( job => job.job_city as string);
-  const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
-  differentCities.unshift('All cities');
+  const differentCities = useMemo(() => {
+    const cities = allJobs.map( job => job.job_city as string);
+    const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
+    differentCities.unshift('All cities');
+    return differentCities;
+  }, []);
   
   return (
     <aside className="w-full sm:w-1/4 text-violet-custom flex flex-col gap-3">

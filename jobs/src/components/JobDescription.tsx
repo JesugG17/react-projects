@@ -4,7 +4,7 @@ import { Job } from "../types/jobs.interface";
 export const JobDescription: FC<Props> = ({ job }) => {
     const description = job.job_description.split('.').filter( text => text.length !== 0);
   return (
-    <div className="w-3/4 text-violet-custom flex flex-col gap-4">
+    <div className="w-full text-violet-custom flex flex-col gap-4">
       {description?.map((paragraph, index) => (
         <p className="font-medium" key={index}>
           {paragraph}

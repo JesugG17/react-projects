@@ -12,8 +12,8 @@ export const JobCompanyInfo: FC<Props> = ({ job }) => {
   const { days } = now.diff(jobPosted, 'days').toObject();
 
   return (
-    <div className="w-4/5 flex flex-col gap-5">
-      <div className="flex gap-6 items-center">
+    <div className="w-full md:w-3/4 flex flex-col gap-5">
+      <div className="flex flex-col md:flex-row gap-6 ">
         <div className='flex flex-col gap-3'>
           <h3 className="text-violet-custom font-bold text-2xl">
             {job.job_title}

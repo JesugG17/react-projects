@@ -22,13 +22,13 @@ export const JobView = () => {
  
   
   return (
-    <div className='min-h-screen flex flex-col items-center bg-background gap-1'>
+    <div className='min-h-screen w-full flex flex-col items-center bg-background gap-1'>
         <header className='w-3/4 flex flex-col p-4 gap-5'>
             <h2 className='text-2xl mb-3 mt-2'>
               <strong>Rapid</strong> Jobs
             </h2>
         </header>
-        <div className='w-3/4 flex gap-4 p-4'>
+        <div className='w-4/5 flex flex-col md:flex-row gap-4 p-4'>
           <JobCompanyContact  
             job={ job }
           />
