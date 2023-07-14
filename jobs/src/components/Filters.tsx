@@ -32,7 +32,7 @@ export const Filters = () => {
       </div>
       <div>
         <h4 className='text-text font-bold mb-1'>LOCATION</h4>
-        <div className='flex items-center bg-white px-2 border-2 border-violet-custom rounded-md'>
+        <div className='flex items-center bg-white px-2 border-violet-custom rounded-md'>
           <Earth />
           <input
             className='w-full p-3 focus:outline-none' 
