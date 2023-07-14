@@ -7,7 +7,7 @@ export const Footer: FC<Props> = ({ setPage, currentPage, maxPage }) => {
 
 
   return (
-    <footer className="flex justify-end gap-5 p-4 items-center">
+    <footer className="flex justify-center md:justify-end gap-5 p-4 items-center">
       <button
         className='border-2 w-[36px] h-[36px] flex items-center justify-center rounded-md cursor-pointer hover:border-search'
         disabled={ currentPage === 0 }

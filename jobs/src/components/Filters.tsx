@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Earth } from './Icons';
 import { useJobs } from '../hooks/useJobs';
 
@@ -9,11 +9,11 @@ export const Filters = () => {
   const [citySelected, setCitySelected] = useState('All cities');
 
   const cities = allJobs.map( job => job.job_city as string);
-  const differentCities: string[] = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
+  const differentCities = cities.filter( (city, index) => cities.indexOf(city) === index && city !== null);
   differentCities.unshift('All cities');
   
   return (
-    <aside className="w-1/4 text-violet-custom flex flex-col gap-3">
+    <aside className="w-full sm:w-1/4 text-violet-custom flex flex-col gap-3">
       <div>
         <input
           checked={checked}
@@ -35,6 +35,7 @@ export const Filters = () => {
             className='w-full p-3 focus:outline-none' 
             placeholder="City, state, zip code or country" 
             type="text" 
+            disabled
           />
         </div>
       </div>

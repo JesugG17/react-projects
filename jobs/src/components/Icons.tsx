@@ -5,7 +5,7 @@ export const Earth: FC<EarthProps> = ({ opacity = '100' }) => {
 };
 
 export const Clock = () => {
-    return <img className='object-contain w-4 h-4 opacity-30' src="/clock.png" alt="clock icon" />
+    return <img className='object-contain w-3 h-3 opacity-30' src="/clock.png" alt="clock icon" />
 }
 
 
