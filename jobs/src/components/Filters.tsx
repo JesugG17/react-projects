@@ -4,10 +4,9 @@ import { useJobs } from '../hooks/useJobs';
 
 export const Filters = () => {
 
-  const { filterJobs, allJobs } = useJobs();
+  const { filterJobs, filterJobsByCity, allJobs } = useJobs();
   const [checked, setChecked] = useState(false);
   const [citySelected, setCitySelected] = useState('All cities');
-  const [cityInput, setCityInput] = useState('');
 
   const differentCities = useMemo(() => {
     const cities = allJobs.map( job => job.job_city as string);
@@ -23,7 +22,7 @@ export const Filters = () => {
           checked={checked}
           onChange={() => {
             const newChecked = !checked;
-            filterJobs({ filterBy: 'job_employment_type', value: newChecked ? 'FULLTIME' : 'all' });
+            filterJobs(newChecked ? 'FULLTIME' : 'all');
             setCitySelected('all cities');
             setChecked(newChecked);
           }}
@@ -39,11 +38,10 @@ export const Filters = () => {
             className='w-full p-3 focus:outline-none' 
             placeholder="Find by city" 
             type="text" 
-            value={ cityInput }
             onChange={(event) => {
               const value = event.target.value;
-              setCityInput(value)
-              filterJobs({ filterBy: 'job_city', value: value.length > 0 ? value : 'all' });
+              setChecked(false);
+              filterJobsByCity(value.toLowerCase());
             }}
           />
         </div>
@@ -62,7 +60,7 @@ export const Filters = () => {
                 className='w-4' 
                 type="radio" name='city'
                 onChange={() => {
-                  filterJobs({ filterBy: 'job_city', value: city === 'All cities' ? 'all' : city});
+                  filterJobsByCity(city.toLowerCase());
                   setChecked(false);
                 }}
               />
