@@ -3,7 +3,7 @@ import { JobsContext } from "../context/JobsContext"
 import { Filter } from '../types/filter.type';
 
 export const useJobs = () => {
-    const { jobs, setJobs, page, setPage } = useContext(JobsContext);
+    const { jobs, setJobs, page, setPage, loading } = useContext(JobsContext);
     const [allJobs] = useState(jobs);
 
     const offset = page * 5;
@@ -17,9 +17,9 @@ export const useJobs = () => {
         
         const newJobs = allJobs.filter( job => {
             const { filterBy, value } = filter;
-            
-            return job[filterBy] === value;
+            return job[filterBy]?.toLocaleLowerCase()?.includes(value.toLowerCase());
         });
+        
         setJobs(newJobs);
     }
 
@@ -32,6 +32,7 @@ export const useJobs = () => {
         setPage,
         allJobs,
         filterJobs,
+        loading
     }
 
 }

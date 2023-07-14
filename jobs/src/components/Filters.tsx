@@ -7,6 +7,7 @@ export const Filters = () => {
   const { filterJobs, allJobs } = useJobs();
   const [checked, setChecked] = useState(false);
   const [citySelected, setCitySelected] = useState('All cities');
+  const [cityInput, setCityInput] = useState('');
 
   const differentCities = useMemo(() => {
     const cities = allJobs.map( job => job.job_city as string);
@@ -36,9 +37,14 @@ export const Filters = () => {
           <Earth />
           <input
             className='w-full p-3 focus:outline-none' 
-            placeholder="City, state, zip code or country" 
+            placeholder="Find by city" 
             type="text" 
-            disabled
+            value={ cityInput }
+            onChange={(event) => {
+              const value = event.target.value;
+              setCityInput(value)
+              filterJobs({ filterBy: 'job_city', value: value.length > 0 ? value : 'all' });
+            }}
           />
         </div>
       </div>

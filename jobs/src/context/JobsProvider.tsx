@@ -16,6 +16,8 @@ export const JobsProvider: FC<Props> = ({ children }) => {
         return Number(storage) ?? 0;
     });
 
+    const [loading, setLoading] = useState(jobs.length === 0);
+
     useEffect(() => {
         localStorage.setItem('page', String(page));
     }, [page]);
@@ -26,6 +28,7 @@ export const JobsProvider: FC<Props> = ({ children }) => {
             .then( ({ data }) => {
                 setJobs(data.data);
                 localStorage.setItem('jobs', JSON.stringify(data.data));
+                setLoading(false);
             });
         }
     }, []);
@@ -35,7 +38,8 @@ return (
         jobs,
         setJobs,
         page,
-        setPage
+        setPage,
+        loading
     }}>
         { children }
     </JobsContext.Provider>
