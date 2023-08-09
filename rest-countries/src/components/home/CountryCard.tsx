@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router";
 import { Country } from "../../types/country.interface";
 import { FC } from "react";
 
 export const CountryCard: FC<Props> = ({ country }) => {
+  
+  const navigate = useNavigate();
+  
   return (
     <li
+      onClick={() => navigate(`/detail/${country.name}`)}
       className="bg-primary-dark w-3/4 rounded-lg shadow-lg cursor-pointer hover:-translate-y-5 transition-all duration-200 hover:brightness-105"
       key={country.name}
     >
