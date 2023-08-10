@@ -12,7 +12,7 @@ export const Detail = () => {
     <section className="flex flex-col gap-10 p-4">
       <header className="self-start">
         <Link
-          className="flex gap-3 justify-center px-4 py-1 items-center text-white text-xs bg-primary-dark shadow-lg rounded hover:brightness-105 transition-all duration-200"
+          className="flex gap-3 justify-center px-4 py-1 items-center text-white text-xs bg-primary-dark shadow-lg rounded hover:brightness-105 transition-all duration-200 md:px-6 md:py-2"
           to="/home"
         >
           <LeftArrowIcon />

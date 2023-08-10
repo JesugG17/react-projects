@@ -16,3 +16,9 @@ export const LeftArrowIcon = () => {
     <img className="w-4 h-4 invert" src="/img/left-arrow.png" alt="Left arrow icon" />
   )
 }
+
+export const SadFaceIcon = () => {
+  return (
+    <img className="w-16 h-16 dark:invert" src="/img/sad.png" alt="Sad face icon" />
+  )
+}

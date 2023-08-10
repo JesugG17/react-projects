@@ -14,7 +14,7 @@ export const useFilter = () => {
             return (
                 (
                     filter.country === ALL_COUNTRIES ||
-                    country.name.toLowerCase().trim().includes(filter.country.toLowerCase().trim()) 
+                    country.name.toLowerCase().trim().startsWith(filter.country.toLowerCase().trim()) 
                 )
                 &&
                 (

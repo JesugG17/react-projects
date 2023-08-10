@@ -2,26 +2,11 @@ import { useState, FormEvent, ChangeEvent } from 'react';
 import { SearchIcon } from "../ui/Icons"
 import { useFilter } from "../../hooks/useFilter";
 import { ALL_COUNTRIES } from "../../constants/country.constants";
+import { useSearch } from '../../hooks/useSearch';
 
 export const Search = () => {
 
-  const { filter, setFilter } = useFilter();
-  const [formState, setFormState] = useState('');
-
-  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    if (value.length === 0) return setFilter({...filter, country: ALL_COUNTRIES});
-
-    setFormState(value);
-  }
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (formState.length === 0) return setFilter({ ...filter, country: ALL_COUNTRIES});
-    
-    setFilter({...filter, country: formState});
-  }
-
+  const { handleChange, handleSubmit } = useSearch();
 
   return (
     <section className="px-7 py-4 bg-primary-dark shadow-lg rounded-lg lg:w-2/5">
@@ -34,7 +19,7 @@ export const Search = () => {
           </button>
           <input 
               className="bg-transparent flex-1 text-white font-medium text-xs focus:outline-none md:text-base"
-              placeholder="Search for a country.." 
+              placeholder="Search for a country that contains.." 
               type="text"
               onChange={handleChange} 
           />
