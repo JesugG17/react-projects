@@ -9,7 +9,7 @@ export const Search = () => {
   const { handleChange, handleSubmit } = useSearch();
 
   return (
-    <section className="px-7 py-4 bg-primary-dark shadow-lg rounded-lg lg:w-2/5">
+    <section className="px-7 py-4 dark:bg-primary-dark shadow-lg rounded-lg lg:w-2/5">
         <form
           onSubmit={handleSubmit} 
           className="flex gap-5 items-center justify-center"

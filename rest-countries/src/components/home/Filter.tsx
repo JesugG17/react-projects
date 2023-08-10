@@ -19,7 +19,7 @@ export const Filter = () => {
     <section className="w-3/5 md:w-1/4 lg:w-1/5">
         <select
             onChange={handleChange}
-            className="w-full p-4 bg-primary-dark text-white text-xs shadow-lg md:text-base rounded-lg" 
+            className="w-full p-4 dark:bg-primary-dark dark:text-white text-xs shadow-lg md:text-base rounded-lg" 
             placeholder="Filter by region"
         >
             {

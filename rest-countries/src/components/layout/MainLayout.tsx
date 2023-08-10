@@ -3,7 +3,7 @@ import { Header } from '../ui/Header';
 
 export const MainLayout: FC<Props> = ({ children }) => {
   return (
-    <div className='w-full min-h-screen bg-background-dark'>
+    <div className='w-full min-h-screen dark:bg-background-dark'>
         <Header />
         { children }
     </div>
