@@ -1,6 +1,4 @@
-import { Filter } from "../components/home"
-import { Countries } from "../components/home/Countries"
-import { Search } from "../components/home/Search"
+import { Filter, Countries, Search } from "../components/home"
 
 export const Home = () => {
   return (

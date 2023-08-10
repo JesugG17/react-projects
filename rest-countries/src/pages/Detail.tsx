@@ -20,17 +20,17 @@ export const Detail = () => {
         </Link>
       </header>
       <main className="flex flex-col gap-10 text-white md:flex-row">
-        <picture className="md:w-3/4 md:self-center">
+        <picture className="md:w-3/4 md:self-center xl:w-2/4">
           <img
             className="object-cover w-full"
             src={country?.flag}
             alt={`${country?.name} flag`}
           />
         </picture>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 lg:flex-1">
           <h4 className="font-medium">{country?.name}</h4>
-          <div className="flex flex-col gap-10 md:flex-row">
-            <article className="flex flex-col gap-2 text-xs">
+          <div className="w-full flex flex-col gap-10 md:flex-row md:gap-20 text-xs md:text-base">
+            <article className="flex flex-col gap-2">
               <p className="text-slate-300">
                 <strong className="text-white">Native name:</strong>{" "}
                 {country?.nativeName}
@@ -52,7 +52,7 @@ export const Detail = () => {
                 {country?.capital}
               </p>
             </article>
-            <article className="flex flex-col gap-2 text-xs">
+            <article className="flex flex-col gap-2">
               <p className="text-slate-300">
                 <strong className="text-white">Top Level Domain:</strong>{" "}
                 {country?.topLevelDomain}
