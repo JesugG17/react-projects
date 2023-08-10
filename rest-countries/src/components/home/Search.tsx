@@ -2,7 +2,7 @@ import { SearchIcon } from "../ui/Icons"
 
 export const Search = () => {
   return (
-    <section className="flex px-7 py-4 gap-5 items-center justify-center bg-primary-dark shadow-lg rounded-lg">
+    <section className="flex px-7 py-4 gap-5 items-center justify-center bg-primary-dark shadow-lg rounded-lg lg:w-2/5">
         <button>
             <SearchIcon />
         </button>

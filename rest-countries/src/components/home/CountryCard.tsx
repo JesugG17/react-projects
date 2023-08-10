@@ -9,12 +9,12 @@ export const CountryCard: FC<Props> = ({ country }) => {
   return (
     <li
       onClick={() => navigate(`/detail/${country.name}`)}
-      className="bg-primary-dark w-3/4 rounded-lg shadow-lg cursor-pointer hover:-translate-y-5 transition-all duration-200 hover:brightness-105"
+      className="bg-primary-dark  w-3/4 rounded-lg shadow-lg cursor-pointer hover:-translate-y-5 transition-all duration-200 hover:brightness-105 md:w-full md:h-full"
       key={country.name}
     >
       <picture className="rounded-lg">
         <img
-          className="rounded-t-lg object-cover"
+          className="rounded-t-lg w-full object-cover h-1/2"
           src={country.flag}
           alt={`${country.name} flag`}
         />

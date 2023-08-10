@@ -6,10 +6,8 @@ import { getCountryByName } from "../utils/getCountryByName";
 export const Detail = () => {
   const params = useParams();
   const country = getCountryByName(params.id as string);
+  window.scrollTo({top: 0});
 
-  const some = 'none';
-
-  console.log(country);
   return (
     <section className="flex flex-col gap-10 p-4">
       <header className="self-start">
@@ -21,9 +19,9 @@ export const Detail = () => {
           Back
         </Link>
       </header>
-      <picture>
+      <picture className="w-full">
         <img
-          className="object-cover"
+          className="object-cover w-full"
           src={country?.flag}
           alt={`${country?.name} flag`}
         />
@@ -32,30 +30,30 @@ export const Detail = () => {
         <h4 className="font-medium">{country?.name}</h4>
         <article className="flex flex-col gap-2 text-xs">
           <p className="text-slate-300">
-            <strong className="text-white">Native name:</strong>: {country?.nativeName}
+            <strong className="text-white">Native name:</strong> {country?.nativeName}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Population:</strong>: {country?.population}
+            <strong className="text-white">Population:</strong> {country?.population}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Region:</strong>: {country?.region}
+            <strong className="text-white">Region:</strong> {country?.region}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Sub Region:</strong>: {country?.subregion}
+            <strong className="text-white">Sub Region:</strong> {country?.subregion}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Capital:</strong>: {country?.capital}
+            <strong className="text-white">Capital:</strong> {country?.capital}
           </p>
         </article>
         <article className="flex flex-col gap-2 text-xs">
         <p className="text-slate-300">
-            <strong className="text-white">Top Level Domain</strong>: {country?.topLevelDomain}
+            <strong className="text-white">Top Level Domain:</strong> {country?.topLevelDomain}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Currencies:</strong>: {}
+            <strong className="text-white">Currencies:</strong> {}
           </p>
           <p className="text-slate-300">
-            <strong className="text-white">Languages</strong>: {'some'}
+            <strong className="text-white">Languages</strong> {'some'}
           </p>
 
         </article>
