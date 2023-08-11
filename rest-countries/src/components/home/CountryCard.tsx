@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router";
 import { Country } from "../../types/country.interface";
 import { FC } from "react";
+import { useTheme } from '../../hooks/useTheme';
 
 export const CountryCard: FC<Props> = ({ country }) => {
   
   const navigate = useNavigate();
+  const { isDarkTheme } = useTheme();
   
   return (
     <li
       onClick={() => navigate(`/detail/${country.name}`)}
-      className="dark:bg-primary-dark place-self-center w-3/4 rounded-lg shadow-lg cursor-pointer hover:-translate-y-5 transition-all duration-200 hover:brightness-105 md:w-full md:h-full"
+      className={` place-self-center w-3/4 rounded-lg shadow-lg cursor-pointer hover:-translate-y-5 transition-all duration-200 hover:brightness-105 md:w-full md:h-full ${isDarkTheme && 'bg-primary-dark'} `}
       key={country.name}
     >
       <picture className="rounded-lg">
@@ -19,7 +21,7 @@ export const CountryCard: FC<Props> = ({ country }) => {
           alt={`${country.name} flag`}
         />
       </picture>
-      <div className="flex flex-col p-6 gap-4 dark:text-white">
+      <div className={`flex flex-col p-6 gap-4 ${ isDarkTheme && 'text-white'} `}>
         <h4 className="font-medium">{country.name}</h4>
         <div>
           <p className="dark:text-slate-300">

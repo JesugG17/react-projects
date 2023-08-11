@@ -1,7 +1,7 @@
 import { createContext } from 'react'
 
 type ContexType = {
-    darkTheme: boolean;
+    isDarkTheme: boolean;
     toggleDarkTheme: () => void;
 }
 

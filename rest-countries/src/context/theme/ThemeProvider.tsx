@@ -3,15 +3,15 @@ import { ThemeContext } from "./ThemeContext";
 
 export const ThemeProvider: FC<Props> = ({ children }) => {
 
-  const [darkTheme, setDarkTheme] = useState(true);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   const toggleDarkTheme = () => {
-    setDarkTheme(!darkTheme);
+    setIsDarkTheme(!isDarkTheme);
   }
 
   return (
     <ThemeContext.Provider value={{
-      darkTheme,
+      isDarkTheme,
       toggleDarkTheme
     }}>
       { children }
