@@ -1,6 +1,6 @@
 import { PropsWithChildren, FC } from 'react';
 import { Header } from '../ui/Header';
-import { useTheme } from '../../hooks/useTheme';
+import { useTheme } from '../../hooks';
 
 export const MainLayout: FC<Props> = ({ children }) => {
   const { isDarkTheme } = useTheme();

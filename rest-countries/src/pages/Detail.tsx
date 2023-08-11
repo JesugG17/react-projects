@@ -2,7 +2,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { LeftArrowIcon } from "../components/ui/Icons";
 import { getCountryByName } from "../utils/getCountryByName";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "../hooks";
 
 export const Detail = () => {
   const params = useParams();

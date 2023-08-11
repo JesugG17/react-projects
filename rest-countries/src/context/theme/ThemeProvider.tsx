@@ -3,12 +3,12 @@ import { ThemeContext } from "./ThemeContext";
 
 export const ThemeProvider: FC<Props> = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
-    const storage = localStorage.getItem('darkTheme');
-    return storage === 'true';
+    const storage = localStorage.getItem("darkTheme");
+    return storage === "true";
   });
 
   useEffect(() => {
-    localStorage.setItem('darkTheme', String(isDarkTheme));
+    localStorage.setItem("darkTheme", String(isDarkTheme));
   }, [isDarkTheme]);
 
   const toggleDarkTheme = () => {

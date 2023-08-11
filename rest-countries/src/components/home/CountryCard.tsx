@@ -1,7 +1,7 @@
+import { FC } from "react";
 import { useNavigate } from "react-router";
 import { Country } from "../../types/country.interface";
-import { FC } from "react";
-import { useTheme } from '../../hooks/useTheme';
+import { useTheme } from '../../hooks';
 
 export const CountryCard: FC<Props> = ({ country }) => {
   
