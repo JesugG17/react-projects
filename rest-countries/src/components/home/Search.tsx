@@ -19,7 +19,7 @@ export const Search = () => {
           <SearchIcon />
         </button>
         <input
-          className="bg-transparent flex-1 text-white font-medium text-xs focus:outline-none md:text-base"
+          className={`bg-transparent flex- font-medium text-xs focus:outline-none md:text-base ${isDarkTheme && 'text-white'}`}
           placeholder="Search for a country that contains.."
           type="text"
           onChange={handleChange}

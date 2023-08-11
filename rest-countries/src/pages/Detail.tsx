@@ -72,7 +72,7 @@ export const Detail = () => {
             <ul className="flex gap-2 text-xs flex-wrap">
               {country?.borders?.map((borderCountry) => (
                 <li
-                  className="bg-primary-dark w-1/4 px-6 py-1 text-center text-gray-400"
+                  className={`shadow-lg w-1/4 font-medium px-6 py-1 text-center ${isDarkTheme && 'bg-primary-dark text-white'}`}
                   key={borderCountry}
                 >
                   {borderCountry}
