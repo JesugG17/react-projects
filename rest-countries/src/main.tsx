@@ -5,9 +5,9 @@ import { AppRouter } from './router/AppRouter';
 import { Providers } from './components/providers/Providers';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Providers>
       <AppRouter />
     </Providers>
-  </React.StrictMode>,
+  // </React.StrictMode>,
 )

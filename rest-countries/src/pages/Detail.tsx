@@ -2,24 +2,26 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { LeftArrowIcon } from "../components/ui/Icons";
 import { getCountryByName } from "../utils/getCountryByName";
+import { useTheme } from "../hooks/useTheme";
 
 export const Detail = () => {
   const params = useParams();
+  const { isDarkTheme } = useTheme();
   const country = getCountryByName(params.id as string);
   window.scrollTo({ top: 0 });
 
   return (
-    <section className="flex flex-col gap-10 p-4">
+    <section className="flex flex-col gap-10 p-4 min-h-screen">
       <header className="self-start">
         <Link
-          className="flex gap-3 justify-center px-4 py-1 items-center text-white text-xs bg-primary-dark shadow-lg rounded hover:brightness-105 transition-all duration-200 md:px-6 md:py-2"
+          className={`flex gap-3 justify-center px-4 py-1 items-center  text-xs shadow-lg rounded hover:brightness-105 transition-all duration-200 md:px-6 md:py-2 ${ isDarkTheme && 'bg-primary-dark text-white'}`}
           to="/home"
         >
           <LeftArrowIcon />
           Back
         </Link>
       </header>
-      <main className="flex flex-col gap-10 text-white md:flex-row">
+      <main className={`flex flex-col gap-10 md:flex-row ${isDarkTheme && 'text-white'} `}>
         <picture className="md:w-3/4 md:self-center xl:w-2/4">
           <img
             className="object-cover w-full"
@@ -29,39 +31,39 @@ export const Detail = () => {
         </picture>
         <div className="flex flex-col gap-10 lg:flex-1">
           <h4 className="font-medium">{country?.name}</h4>
-          <div className="w-full flex flex-col gap-10 md:flex-row md:gap-20 text-xs md:text-base">
+          <div className={`w-full flex flex-col gap-10 md:flex-row md:gap-20 text-xs md:text-base ${isDarkTheme && 'text-white'}`}>
             <article className="flex flex-col gap-2">
-              <p className="text-slate-300">
-                <strong className="text-white">Native name:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Native name:</strong>{" "}
                 {country?.nativeName}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Population:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Population:</strong>{" "}
                 {country?.population}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Region:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Region:</strong>{" "}
                 {country?.region}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Sub Region:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Sub Region:</strong>{" "}
                 {country?.subregion}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Capital:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Capital:</strong>{" "}
                 {country?.capital}
               </p>
             </article>
             <article className="flex flex-col gap-2">
-              <p className="text-slate-300">
-                <strong className="text-white">Top Level Domain:</strong>{" "}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Top Level Domain:</strong>{" "}
                 {country?.topLevelDomain}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Currencies:</strong> {}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Currencies:</strong> {}
               </p>
-              <p className="text-slate-300">
-                <strong className="text-white">Languages</strong> {"some"}
+              <p className="dark:text-slate-300">
+                <strong className="dark:text-white">Languages</strong> {"some"}
               </p>
             </article>
           </div>
