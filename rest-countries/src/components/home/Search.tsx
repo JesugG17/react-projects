@@ -13,13 +13,13 @@ export const Search = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="flex gap-5 items-center justify-center"
+        className="flex gap-5 items-center"
       >
         <button>
           <SearchIcon />
         </button>
         <input
-          className={`bg-transparent flex- font-medium text-xs focus:outline-none md:text-base ${isDarkTheme && 'text-white'}`}
+          className={`bg-transparent flex-1 font-medium text-xs focus:outline-none md:text-base ${isDarkTheme && 'text-white'}`}
           placeholder="Search for a country that contains.."
           type="text"
           onChange={handleChange}

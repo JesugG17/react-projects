@@ -14,7 +14,7 @@ export const useJobs = () => {
         setPage(0);
         if (value === 'all cities' || value === 'all') return setJobs(allJobs);
         
-        const newJobs = allJobs.filter( job => {
+        const newJobs = jobs.filter( job => {
 
             const normalizedValue = value.toLowerCase();
 
@@ -33,7 +33,7 @@ export const useJobs = () => {
         setPage(0);
         if (city.length === 0 || city == 'all cities') return setJobs(allJobs);
 
-        const jobsFiltered = allJobs.filter( job => {
+        const jobsFiltered = jobs.filter( job => {
             return job.job_city?.toLowerCase().includes(city);
         });
 

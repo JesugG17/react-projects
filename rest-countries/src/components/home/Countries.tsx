@@ -1,4 +1,4 @@
-import { useFilter, useSearch } from "../../hooks";
+import { useFilter, useSearch } from '../../hooks';
 import { Country } from "../../types/country.interface";
 import { CountryCard } from "./CountryCard";
 import { NoCountriesFound } from "./NoCountriesFound";
