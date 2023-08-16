@@ -1,17 +1,19 @@
 
-namespace NodeJS {
-    interface ProcessEnv {
-      // YOUR ENVIROMENT VARIALBES THAT YOU LIKE TO ADD
+declare global {
+
+  namespace Express {
+    export interface Request {
+
     }
+  }
+
+  namespace NodeJS {
+    interface ProcessEnv {
+      MONGODB_ATLAS: string;
+      PORT: string;
+    }
+  }
 }
 
+export {};
 
-// THE CODE OF BELOW IS FOR EXTEND THE REQUEST TYPE OF EXPRESS
-
-// declare global {
-//   namespace Express {
-//     export interface Request {
-//       usuario?: UsuarioModel;
-//     }
-//   }
-// }
