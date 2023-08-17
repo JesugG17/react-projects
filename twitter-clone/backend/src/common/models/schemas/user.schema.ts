@@ -15,7 +15,8 @@ const UserSchema = new Schema({
         require: [true, 'The password is required'],
     },
     photoUrl: {
-        type: String
+        type: String,
+        null: true
     }
 });
 
