@@ -11,10 +11,14 @@ const authController = new AuthController();
 
 router.post('/login', authController.login);
 
-router.post('/register',[
+router.post(
+  '/register',
+  [
     check('email', 'This email is not valid').isEmail(),
     check('email').custom(isEmailTaken),
-    catchErrors
-], authController.register);
+    catchErrors,
+  ],
+  authController.register
+);
 
 export default router;

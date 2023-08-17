@@ -1,10 +1,6 @@
-
 declare global {
-
   namespace Express {
-    export interface Request {
-
-    }
+    export interface Request {}
   }
 
   namespace NodeJS {
@@ -17,4 +13,3 @@ declare global {
 }
 
 export {};
-
