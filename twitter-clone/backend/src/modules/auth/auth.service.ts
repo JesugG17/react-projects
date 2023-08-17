@@ -2,10 +2,10 @@ import { StatusCodes } from 'http-status-codes';
 import { validate } from 'class-validator';
 import bcrypt from 'bcrypt';
 
-import { User } from '../../common/models/schemas/user.schema';
+import { User } from '@/common/models/schemas/user.schema';
 import { CreateUserDto } from './dto/createUser.dto';
-import { generateJWT } from '../../common/utils/generateJWT';
-import { AuthResponse } from '../../common/types/interfaces/auth.response';
+import { generateJWT } from '@/common/utils/generateJWT';
+import { AuthResponse } from '@/common/types/interfaces/auth.response';
 import { LoginUserDto } from './dto/loginUser.dto';
 
 export class AuthService {

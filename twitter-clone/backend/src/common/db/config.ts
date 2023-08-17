@@ -6,7 +6,6 @@ export const connectDB = async () => {
     await mongoose.connect(env.MONGODB_ATLAS);
     console.log('Database running');
   } catch (error) {
-    console.log(error);
     console.log('Can not connect to database');
   }
 };

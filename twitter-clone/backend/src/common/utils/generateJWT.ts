@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import env from '../../../config';
+import env from 'env';
 
 export const generateJWT = (id: string): Promise<string> => {
   return new Promise((resolve, reject) => {
