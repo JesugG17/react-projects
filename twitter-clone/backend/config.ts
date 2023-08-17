@@ -6,18 +6,21 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 interface ENV {
   PORT: string;
   MONGODB_ATLAS: string;
+  SECRET_KEY: string;
 }
 
 interface Config {
   PORT: string;
   MONGODB_ATLAS: string;
+  SECRET_KEY: string;
 }
 
 
 const getConfig = (): ENV => {
   return {
     PORT: process.env.PORT,
-    MONGODB_ATLAS: process.env.MONGODB_ATLAS
+    MONGODB_ATLAS: process.env.MONGODB_ATLAS,
+    SECRET_KEY: process.env.SECRET_KEY
   };
 };
 

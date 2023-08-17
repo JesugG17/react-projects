@@ -11,6 +11,7 @@ declare global {
     interface ProcessEnv {
       MONGODB_ATLAS: string;
       PORT: string;
+      SECRET_KEY: string;
     }
   }
 }
