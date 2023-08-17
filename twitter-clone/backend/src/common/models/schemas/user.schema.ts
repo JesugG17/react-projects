@@ -14,6 +14,10 @@ const UserSchema = new Schema({
         type: String,
         require: [true, 'The password is required'],
     },
+    isActive: {
+        type: Boolean,
+        default: true
+    },
     photoUrl: {
         type: String,
         null: true
