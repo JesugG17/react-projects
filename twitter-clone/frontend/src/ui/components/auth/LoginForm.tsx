@@ -1,6 +1,6 @@
 export const LoginForm = () => {
   return (
-    <form className="flex flex-col gap-5">
+    <form className="w-full flex flex-col gap-5">
       <div className="flex flex-col gap-3">
         <input
           className="border-2 focus:outline-none border-slate-300 p-2 rounded"
@@ -17,7 +17,7 @@ export const LoginForm = () => {
         className="bg-black p-2 rounded-full text-white"
         type="submit"
       >
-        Log in
+        Sign in
       </button>
     </form>
   );

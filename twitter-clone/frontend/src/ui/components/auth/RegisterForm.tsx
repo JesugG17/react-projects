@@ -1,6 +1,6 @@
 export const RegisterForm = () => {
   return (
-    <form className="flex flex-col gap-5">
+    <form className="w-full flex flex-col gap-5">
       <input
         className="border-2 p-2 rounded border-slate-300"
         type="text"
