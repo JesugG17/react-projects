@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom"
-import { RegisterForm } from "@/ui/components/auth/RegisterForm"
-import { AuthLayout } from "@/ui/components/auth/hoc/AuthLayout"
+import { Link } from 'react-router-dom';
+import { RegisterForm } from '@/ui/components/auth/RegisterForm';
+import { AuthLayout } from '@/ui/components/auth/hoc/AuthLayout';
 
 export const RegisterPage = () => {
   return (
@@ -17,5 +17,5 @@ export const RegisterPage = () => {
         </Link>
       </p>
     </AuthLayout>
-  )
-}
+  );
+};

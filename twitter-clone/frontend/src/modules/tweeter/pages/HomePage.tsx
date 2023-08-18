@@ -1,9 +1,5 @@
-import { TweeterLayout } from "@/ui/components/tweeter/hoc/TweeterLayout"
+import { TweeterLayout } from '@/ui/components/tweeter/hoc/TweeterLayout';
 
 export const HomePage = () => {
-  return (
-    <TweeterLayout>
-        
-    </TweeterLayout>
-  )
-}
+  return <TweeterLayout></TweeterLayout>;
+};
