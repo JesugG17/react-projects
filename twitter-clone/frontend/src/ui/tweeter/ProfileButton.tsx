@@ -1,7 +1,8 @@
-import { useIsMobile } from '@/common/hooks/useIsMobile';
+import { MOBILE_WIDTH } from '@/common/constants/width.constants';
+import { useIsMinWidth } from '@/common/hooks/useIsMinWidth';
 
 export const ProfileButton = () => {
-  const isMobile = useIsMobile();
+  const isMinWidth = useIsMinWidth(MOBILE_WIDTH);
 
   return (
     <section className="flex gap-2 items-center">
@@ -10,7 +11,7 @@ export const ProfileButton = () => {
         src="/img/photo.jpg"
         alt=""
       />
-      {!isMobile && <p>Jesus Gastelum</p>}
+      {!isMinWidth && <p>Jesus Gastelum</p>}
     </section>
   );
 };

@@ -1,14 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 
-export const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 425);
-  const desktopMediaQuery = useMemo(() => window.matchMedia('(max-width: 426px)'), []);
+export const useIsMinWidth = (width: number = 425) => {
+  const [isMinWidth, setIsMinWidth] = useState(window.innerWidth >= width);
+  const desktopMediaQuery = useMemo(() => window.matchMedia(`(min-width: ${width}px)`), []);
 
   const handleEvent = (event: MediaQueryListEvent) => {
     if (event.matches) {
-      return setIsMobile(true);
+      console.log('matches');
+      return setIsMinWidth(true);
     }
-    setIsMobile(false);
+    setIsMinWidth(false);
   };
 
   useEffect(() => {
@@ -18,5 +19,5 @@ export const useIsMobile = () => {
     };
   }, []);
 
-  return isMobile;
+  return isMinWidth;
 };

@@ -3,11 +3,11 @@ import { ImageIcon, WorldIcon } from '../shared/Icons';
 
 export const TweetPublish = () => {
   return (
-    <Wrapper styles="bg-white flex flex-col gap-4 p-2 rounded-lg shadow w-11/12">
-      <p className="text-xs font-medium">Tweet something</p>
-      <div className="flex gap-2 items-center">
+    <Wrapper styles="bg-white flex flex-col gap-4 p-2 rounded-lg shadow w-11/12 md:p-4">
+      <p className="text-xs font-medium md:text-base">Tweet something</p>
+      <div className="flex gap-2 items-center md:gap-3">
         <img
-          className="object-cover rounded w-1/5"
+          className="object-cover rounded w-1/5 md:w-12"
           src="/img/photo.jpg"
           alt=""
         />
@@ -23,7 +23,7 @@ export const TweetPublish = () => {
           <ImageIcon />
           <div className="flex gap-1 items-center">
             <WorldIcon />
-            <p className="text-[8px] font-medium text-[#0063F8]">Everyone can reply</p>
+            <p className="text-[10px] font-medium text-[#0063F8]">Everyone can reply</p>
           </div>
         </div>
         <button className="text-xs text-white bg-blue-500 px-4 py-1 rounded ">Tweet</button>
