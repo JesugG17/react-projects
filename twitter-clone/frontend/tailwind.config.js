@@ -6,6 +6,14 @@ export default {
       colors: {
         background: '#E7EDF2',
       },
+      screens: {
+        'xxs-mobile': '320px',
+        'xs-mobile': '375px',
+        'mobile': '425px',
+        'tablet': '768px',
+        'laptop': '1024px',
+        'laptop-lg': '1440px',
+      }
     },
   },
   plugins: [],

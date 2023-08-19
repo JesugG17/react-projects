@@ -1,4 +1,4 @@
-import { HomePage } from '@/modules/tweeter/pages/HomePage';
+import { HomePage } from '@/pages/tweeter/HomePage';
 import { Routes, Route } from 'react-router';
 
 export const TweeterRoutes = () => {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { LoginForm } from '@/ui/components/auth/LoginForm';
-import { OAuthSignIn } from '@/ui/components/auth/OAuthSignIn';
-import { AuthLayout } from '@/ui/components/auth/hoc/AuthLayout';
+import { LoginForm } from '@/ui/auth/LoginForm';
+import { OAuthSignIn } from '@/ui/auth/OAuthSignIn';
+import { AuthLayout } from '@/ui/auth/hoc/AuthLayout';
 
 export const LoginPage = () => {
   return (

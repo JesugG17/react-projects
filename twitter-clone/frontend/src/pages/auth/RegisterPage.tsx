@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { RegisterForm } from '@/ui/components/auth/RegisterForm';
-import { AuthLayout } from '@/ui/components/auth/hoc/AuthLayout';
+import { RegisterForm } from '@/ui/auth/RegisterForm';
+import { AuthLayout } from '@/ui/auth/hoc/AuthLayout';
 
 export const RegisterPage = () => {
   return (

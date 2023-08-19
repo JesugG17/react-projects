@@ -1,6 +1,5 @@
-import { TweetPublish } from '@/ui/components/tweeter/TweetPublish';
-import { TweeterLayout } from '@/ui/components/tweeter/hoc/TweeterLayout';
-import { Tweet } from '../../../ui/components/tweeter/Tweet';
+import { TweetPublish, Tweet } from '@/ui/tweeter';
+import { TweeterLayout } from '@/ui/tweeter/hoc/TweeterLayout';
 
 export const HomePage = () => {
   return (
