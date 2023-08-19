@@ -37,3 +37,15 @@ export const GithubIcon = () => {
     />
   );
 };
+
+export const ImageIcon = () => {
+  return (
+    <img className="w-4 object-cover" src="/img/icons/image.png" alt="Image icon" />
+  )
+}
+
+export const WorldIcon = () => {
+  return (
+    <img className="w-4" src="/img/icons/world.png" alt="World Icon" />
+  )
+}
