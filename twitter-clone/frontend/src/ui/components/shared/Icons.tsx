@@ -8,6 +8,16 @@ export const TweeterIcon = () => {
   );
 };
 
+export const TweeterIconWithName = () => {
+  return (
+    <img
+      className="w-32"
+      src="/img/tweeter.svg"
+      alt="Tweeter icon"
+    />
+  );
+}
+
 export const GoogleIcon = () => {
   return (
     <img
