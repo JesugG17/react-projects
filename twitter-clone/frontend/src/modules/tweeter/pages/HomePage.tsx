@@ -6,5 +6,5 @@ export const HomePage = () => {
     <TweeterLayout>
       <TweetPublish />
     </TweeterLayout>
-  )
+  );
 };

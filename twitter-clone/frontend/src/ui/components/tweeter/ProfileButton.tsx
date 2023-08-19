@@ -1,7 +1,6 @@
-import { useIsMobile } from "@/common/hooks/useIsMobile";
+import { useIsMobile } from '@/common/hooks/useIsMobile';
 
 export const ProfileButton = () => {
-
   const isMobile = useIsMobile();
 
   return (
@@ -11,10 +10,7 @@ export const ProfileButton = () => {
         src="/img/photo.jpg"
         alt=""
       />
-      {
-        !isMobile &&
-        <p>Jesus Gastelum</p>
-      }
+      {!isMobile && <p>Jesus Gastelum</p>}
     </section>
   );
 };
