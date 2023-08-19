@@ -3,7 +3,7 @@ import { ImageIcon, WorldIcon } from '../shared/Icons';
 
 export const TweetPublish = () => {
   return (
-    <Wrapper styles="bg-white flex flex-col gap-4 p-2 rounded-lg shadow w-5/6">
+    <Wrapper styles="bg-white flex flex-col gap-4 p-2 rounded-lg shadow w-11/12">
       <p className="text-xs font-medium">Tweet something</p>
       <div className="flex gap-2 items-center">
         <img

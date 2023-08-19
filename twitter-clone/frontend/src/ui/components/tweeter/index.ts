@@ -1,4 +1,4 @@
-export * from './Footer';
+export * from './FooterNavigation';
 export * from './Navbar';
 export * from './Navigation';
 export * from './ProfileButton';

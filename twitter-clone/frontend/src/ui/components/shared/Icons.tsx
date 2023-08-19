@@ -41,7 +41,7 @@ export const GithubIcon = () => {
 export const ImageIcon = () => {
   return (
     <img
-      className="w-4 object-cover"
+      className="w-4 object-contain"
       src="/img/icons/image.png"
       alt="Image icon"
     />
@@ -62,15 +62,15 @@ export const HomeIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-home w-full"
+      className="icon icon-tabler icon-tabler-home w-2/4"
       width="28"
       height="28"
       viewBox="0 0 24 24"
       strokeWidth="0"
       stroke="currentColor"
       fill="gray"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path
         stroke="none"
@@ -88,15 +88,15 @@ export const ExploreIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-brand-safari w-full"
+      className="icon icon-tabler icon-tabler-brand-safari w-2/4"
       width="28"
       height="28"
       viewBox="0 0 24 24"
       strokeWidth="2"
       stroke="currentColor"
       fill="none"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path
         stroke="none"
@@ -113,15 +113,15 @@ export const BookmarkIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="icon icon-tabler icon-tabler-bookmark w-full"
+      className="icon icon-tabler icon-tabler-bookmark w-2/4"
       width="28"
       height="28"
       viewBox="0 0 24 24"
-      stroke-width="0"
+      strokeWidth="0"
       stroke="currentColor"
       fill="gray"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path
         stroke="none"
@@ -129,6 +129,78 @@ export const BookmarkIcon = () => {
         fill="none"
       ></path>
       <path d="M9 4h6a2 2 0 0 1 2 2v14l-5 -3l-5 3v-14a2 2 0 0 1 2 -2"></path>
+    </svg>
+  );
+};
+
+export const CommentsIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="icon icon-tabler icon-tabler-message-circle w-2/4"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path
+        stroke="none"
+        d="M0 0h24v24H0z"
+        fill="none"
+      ></path>
+      <path d="M3 20l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c3.255 2.777 3.695 7.266 1.029 10.501c-2.666 3.235 -7.615 4.215 -11.574 2.293l-4.7 1"></path>
+    </svg>
+  );
+};
+
+export const ShareIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="icon icon-tabler icon-tabler-share w-2/4"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path
+        stroke="none"
+        d="M0 0h24v24H0z"
+        fill="none"
+      ></path>
+      <path d="M13 4v4c-6.575 1.028 -9.02 6.788 -10 12c-.037 .206 5.384 -5.962 10 -6v4l8 -7l-8 -7z"></path>
+    </svg>
+  );
+};
+
+export const HeartIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="icon icon-tabler icon-tabler-heart w-2/4"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      strokeWidth="2"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path
+        stroke="none"
+        d="M0 0h24v24H0z"
+        fill="none"
+      ></path>
+      <path d="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572"></path>
     </svg>
   );
 };
