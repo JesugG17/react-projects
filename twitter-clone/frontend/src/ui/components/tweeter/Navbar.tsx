@@ -7,8 +7,6 @@ export const Navbar = () => {
 
   const isMobile = useIsMobile();
 
-  console.log(isMobile);
-
   return (
     <nav className="bg-white px-4 py-2 shadow-mg w-full flex justify-between lg:px-10">
       {
