@@ -20,8 +20,6 @@ const LINKS_ICONS = [
 export const FooterNavigation = () => {
   const { tabSelected, setTabSelected } = useTabs();
 
-  console.log(LINKS_ICONS[0].icon.props);
-
   return (
     <footer className="fixed bottom-0 w-full bg-white px-4 shadow-lg flex justify-between">
       {LINKS_ICONS.map((item, index) => (

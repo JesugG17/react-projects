@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { LoginPage, RegisterPage } from '@/pages/auth';
 
 export const AuthRoutes = () => {
@@ -11,6 +11,10 @@ export const AuthRoutes = () => {
       <Route
         path="/register"
         element={<RegisterPage />}
+      />
+      <Route
+        path="/*"
+        element={<Navigate to="/auth/login" />}
       />
     </Routes>
   );

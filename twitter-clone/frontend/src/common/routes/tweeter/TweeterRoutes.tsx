@@ -1,6 +1,7 @@
 import { TabsProvider } from '@/common/context/tabs/TabsProvider';
 import { HomePage, ExplorePage, BookmarksPage } from '@/pages/tweeter';
-import { Routes, Route } from 'react-router';
+import { ProfilePage } from '@/pages/tweeter/ProfilePage';
+import { Routes, Route, Navigate } from 'react-router';
 
 export const TweeterRoutes = () => {
   return (
@@ -17,6 +18,14 @@ export const TweeterRoutes = () => {
         <Route
           path="/bookmarks"
           element={<BookmarksPage />}
+        />
+        <Route 
+          path='/profile/:id'
+          element={<ProfilePage />}
+        />
+        <Route
+          path="/*"
+          element={<Navigate to="/auth/login" />}
         />
       </Routes>
     </TabsProvider>
