@@ -9,7 +9,7 @@ export const Navbar = () => {
   const isMinWidth = useIsMinWidth(LAPTOP_WIDTH);
 
   return (
-    <nav className="bg-white px-4 py-2 shadow-mg w-full flex justify-between lg:px-10 items-center">
+    <nav className="bg-white px-4 py-2 shadow-mg w-full flex justify-between lg:px-10 lg:py-0 items-center">
       <Link to="/home">{!isMinWidth ? <TweeterIcon /> : <TweeterIconWithName />}</Link>
       {isMinWidth && <Navigation />}
       <ProfileButton />
