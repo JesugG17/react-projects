@@ -1,5 +1,5 @@
-import { BookmarkIcon, CommentsIcon, HeartIcon, ImageIcon, ShareIcon } from '../shared/Icons';
-import { Wrapper } from '../shared/Wrapper';
+import { Wrapper } from '@/ui/shared/Wrapper';
+import { BookmarkIcon, CommentsIcon, HeartIcon, ImageIcon, ShareIcon } from '@/ui/shared/Icons';
 
 export const Tweet = () => {
   return (

@@ -1,5 +1,5 @@
-import { Wrapper } from '../shared/Wrapper';
-import { ImageIcon, WorldIcon } from '../shared/Icons';
+import { Wrapper } from '@/ui/shared/Wrapper';
+import { ImageIcon, WorldIcon } from '@/ui/shared/Icons';
 
 export const TweetPublish = () => {
   return (
@@ -23,7 +23,9 @@ export const TweetPublish = () => {
           <ImageIcon />
           <div className="flex gap-1 items-center">
             <WorldIcon />
-            <p className="text-[10px] font-medium text-[#0063F8] md:text-base">Everyone can reply</p>
+            <p className="text-[10px] font-medium text-[#0063F8] md:text-base">
+              Everyone can reply
+            </p>
           </div>
         </div>
         <button className="text-xs text-white bg-blue-500 px-4 py-1 rounded ">Tweet</button>

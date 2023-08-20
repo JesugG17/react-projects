@@ -2,5 +2,5 @@ export * from './FooterNavigation';
 export * from './Navbar';
 export * from './Navigation';
 export * from './ProfileButton';
-export * from './TweetPublish';
-export * from './Tweet';
+export * from './homepage/TweetPublish';
+export * from './homepage/Tweet';

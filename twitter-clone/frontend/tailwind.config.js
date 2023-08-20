@@ -9,11 +9,11 @@ export default {
       screens: {
         'xxs-mobile': '320px',
         'xs-mobile': '375px',
-        'mobile': '425px',
-        'tablet': '768px',
-        'laptop': '1024px',
+        mobile: '425px',
+        tablet: '768px',
+        laptop: '1024px',
         'laptop-lg': '1440px',
-      }
+      },
     },
   },
   plugins: [],
