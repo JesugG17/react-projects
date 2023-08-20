@@ -19,8 +19,8 @@ export const TweeterRoutes = () => {
           path="/bookmarks"
           element={<BookmarksPage />}
         />
-        <Route 
-          path='/profile/:id'
+        <Route
+          path="/profile/:id"
           element={<ProfilePage />}
         />
         <Route

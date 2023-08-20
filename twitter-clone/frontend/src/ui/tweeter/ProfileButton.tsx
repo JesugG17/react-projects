@@ -6,8 +6,8 @@ export const ProfileButton = () => {
   const isMinWidth = useIsMinWidth(LAPTOP_WIDTH);
 
   return (
-    <Link 
-      to='/profile/JesusGastelum'
+    <Link
+      to="/profile/JesusGastelum"
       className="flex gap-2 items-center cursor-pointer"
     >
       <img
