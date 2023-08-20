@@ -66,9 +66,9 @@ export const HomeIcon = () => {
       width="28"
       height="28"
       viewBox="0 0 24 24"
-      strokeWidth="0"
+      strokeWidth="2"
       stroke="currentColor"
-      fill="gray"
+      fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
     >
@@ -117,9 +117,9 @@ export const BookmarkFilledIcon = () => {
       width="28"
       height="28"
       viewBox="0 0 24 24"
-      strokeWidth="0"
+      strokeWidth="2"
       stroke="currentColor"
-      fill="gray"
+      fill="none"
       strokeLinecap="round"
       strokeLinejoin="round"
     >

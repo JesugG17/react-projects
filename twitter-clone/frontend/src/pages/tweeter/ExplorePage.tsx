@@ -5,15 +5,11 @@ import { useIsMinWidth } from '../../common/hooks/useIsMinWidth';
 import { LAPTOP_WIDTH } from '@/common/constants/width.constants';
 
 export const ExplorePage = () => {
-
   const isMinWidth = useIsMinWidth(LAPTOP_WIDTH);
 
   return (
     <TweeterLayout>
-      {
-        isMinWidth &&
-        (<Filter />)
-      }
+      {isMinWidth && <Filter />}
       <Search />
     </TweeterLayout>
   );
