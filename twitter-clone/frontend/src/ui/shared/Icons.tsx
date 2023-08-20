@@ -1,7 +1,7 @@
 export const TweeterIcon = () => {
   return (
     <img
-      className="w-12 md:w-14"
+      className="w-12 md:w-16"
       src="/img/tweeter-small.svg"
       alt="Tweeter icon"
     />

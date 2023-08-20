@@ -6,7 +6,6 @@ export const useIsMinWidth = (width: number = 425) => {
 
   const handleEvent = (event: MediaQueryListEvent) => {
     if (event.matches) {
-      console.log('matches');
       return setIsMinWidth(true);
     }
     setIsMinWidth(false);
