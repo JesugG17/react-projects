@@ -1,11 +1,20 @@
 import { useForm } from '@/hooks/useForm';
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Socket } from 'socket.io-client';
+
+type Message =  {
+    room: string;
+    author: string;
+    message: string;
+    time: string;
+}
 
 export const Chat: FC<Props> = ({ socket, chat }) => {
   const { formState, onChange, onReset } = useForm({
     message: '',
   });
+
+  const [messageList, setMessageList] = useState<Message[]>([]);
 
   const sendMessage = async () => {
     if (formState.message.length === 0) return;
@@ -17,22 +26,29 @@ export const Chat: FC<Props> = ({ socket, chat }) => {
       time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes(),
     };
 
-    await socket.emit('send_message', messageData);
+    setMessageList([...messageList, messageData])
+    socket.emit('send_message', messageData);
     onReset();
   };
 
   useEffect(() => {
     socket.on('receive_message', (payload) => {
-        console.log(payload);
+        setMessageList([...messageList, payload])
     });
   }, [socket]);
 
   return (
-    <section>
+    <section className='chat-window'>
       <header className='chat-header'>
         <p>Live chat</p>
       </header>
-      <main className='chat-body'></main>
+      <main className='chat-body'>
+        {
+            messageList.map((item, index) => (
+                <h1 key={index}>{item.message}</h1>
+            ))
+        }
+      </main>
       <footer className='chat-footer'>
         <input
           type='text'
