@@ -1,6 +1,6 @@
 import express, { Application } from 'express';
 import { Server, createServer } from 'http';
-import { Server as SocketIO} from 'socket.io';
+import { Server as SocketIO, Event } from 'socket.io';
 import cors from 'cors';
 
 export class App {
@@ -24,11 +24,20 @@ export class App {
         });
 
         this.io.on('connection', (socket) => {
-            console.log(`User connected id: ${socket.id}`);
+            // console.log(`User connected id: ${socket.id}`);
+
+            socket.on('join_room', (payload) => {
+                socket.join(payload);
+            });
+
+            socket.on('send_message', (payload) => {
+                socket.to(payload.room).emit('receive_message', payload);
+            });
 
             socket.on('disconnect', () => {
-                console.log(`User disconnected id: ${socket.id}`);
+                // console.log(`User disconnected id: ${socket.id}`);
             });
+
         });
     }
 

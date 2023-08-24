@@ -13,7 +13,7 @@ export const App = () => {
   const joinRoom = () => {
     if (formState.userName.length === 0 || formState.room.length === 0) return;
 
-    socket.emit('join_room', formState);
+    socket.emit('join_room', formState.room);
   };
 
   return (
