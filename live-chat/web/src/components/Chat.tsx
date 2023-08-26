@@ -1,18 +1,20 @@
 import { useForm } from '@/hooks/useForm';
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { Socket } from 'socket.io-client';
 
-type Message =  {
-    room: string;
-    author: string;
-    message: string;
-    time: string;
-}
+type Message = {
+  room: string;
+  author: string;
+  message: string;
+  time: string;
+};
 
 export const Chat: FC<Props> = ({ socket, chat }) => {
   const { formState, onChange, onReset } = useForm({
     message: '',
   });
+
+  const bottomRef = useRef<HTMLButtonElement | null>(null);
 
   const [messageList, setMessageList] = useState<Message[]>([]);
 
@@ -26,16 +28,16 @@ export const Chat: FC<Props> = ({ socket, chat }) => {
       time: new Date(Date.now()).getHours() + ':' + new Date(Date.now()).getMinutes(),
     };
 
-    setMessageList([...messageList, messageData])
+    setMessageList((previous) => [...previous, messageData]);
     socket.emit('send_message', messageData);
     onReset();
   };
 
   useEffect(() => {
     socket.on('receive_message', (payload) => {
-        setMessageList([...messageList, payload])
+      setMessageList((previous) => [...previous, payload]);
     });
-  }, [socket]);
+  }, []);
 
   return (
     <section className='chat-window'>
@@ -43,11 +45,27 @@ export const Chat: FC<Props> = ({ socket, chat }) => {
         <p>Live chat</p>
       </header>
       <main className='chat-body'>
-        {
-            messageList.map((item, index) => (
-                <h1 key={index}>{item.message}</h1>
-            ))
-        }
+        {messageList.map((item, index) => (
+          <div
+            key={index}
+            className='message'
+            id={chat.userName === item.author ? 'you' : 'other'}
+          >
+            <div >
+              <div
+                className='message-content'
+                
+              >
+                <p>{item.message}</p>
+              </div>
+              <div className='message-meta'>
+                <p>{item.time}</p>
+                <p>{item.author}</p>
+              </div>
+
+            </div>
+          </div>
+        ))}
       </main>
       <footer className='chat-footer'>
         <input
@@ -57,7 +75,7 @@ export const Chat: FC<Props> = ({ socket, chat }) => {
           value={formState.message}
           onChange={onChange}
         />
-        <button onClick={sendMessage}>&#9658;</button>
+        <button ref={bottomRef} onClick={sendMessage}>&#9658;</button>
       </footer>
     </section>
   );

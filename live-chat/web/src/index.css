@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
@@ -15,7 +16,6 @@
     margin: 0%;
     padding: 0%;
   }
-  @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
   
   .joinChatContainer {
     display: flex;
@@ -117,31 +117,35 @@
     overflow-wrap: break-word;
     word-break: break-word;
   }
+
+  .chat-body {
+    overflow-y: scroll;
+  }
   
   #you {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   
   #you .message-content {
-    justify-content: flex-start;
+    justify-content: flex-end;
   }
   
   #you .message-meta {
-    justify-content: flex-start;
+    justify-content: flex-end;
     margin-left: 5px;
   }
   
   #other {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
   
   #other .message-content {
-    justify-content: flex-end;
+    justify-content: flex-start;
     background-color: cornflowerblue;
   }
   
   #other .message-meta {
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-right: 5px;
   }
   
