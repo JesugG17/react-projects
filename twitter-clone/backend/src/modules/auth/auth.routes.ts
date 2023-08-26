@@ -21,4 +21,8 @@ router.post(
   authController.register
 );
 
+router.post('/google', authController.googleSignIn);
+
+router.post('/github', authController.githubSignIn);
+
 export default router;

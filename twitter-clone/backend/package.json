@@ -5,7 +5,7 @@
   "main": "index.js",
   "_moduleAliases": {
     "@": "dist/src",
-    "env": "dist"
+    "env": "dist/config"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

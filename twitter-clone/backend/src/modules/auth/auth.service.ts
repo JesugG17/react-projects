@@ -2,11 +2,10 @@ import { StatusCodes } from 'http-status-codes';
 import { validate } from 'class-validator';
 import bcrypt from 'bcrypt';
 
+import { CreateUserDto, LoginUserDto } from './dto';
 import { User } from '@/common/models/schemas/user.schema';
-import { CreateUserDto } from './dto/createUser.dto';
 import { generateJWT } from '@/common/utils/generateJWT';
 import { AuthResponse } from '@/common/types/interfaces/auth.response';
-import { LoginUserDto } from './dto/loginUser.dto';
 
 export class AuthService {
   async login(loginUserDto: LoginUserDto): Promise<AuthResponse> {
@@ -16,7 +15,7 @@ export class AuthService {
       if (!user || !user.isActive) {
         return {
           data: null,
-          message: 'The user with this email do not exists',
+          message: 'The email is incorrect',
           code: StatusCodes.BAD_REQUEST,
         };
       }
@@ -68,9 +67,9 @@ export class AuthService {
       const hashedPassword = bcrypt.hashSync(createUserDto.password, salt);
       createUserDto.password = hashedPassword;
 
-      const newUser = new User(createUserDto);
+      const user = new User(createUserDto);
 
-      await newUser.save();
+      await user.save();
 
       return {
         data: null,
@@ -85,5 +84,13 @@ export class AuthService {
         code: StatusCodes.INTERNAL_SERVER_ERROR,
       };
     }
+  }
+
+  async googleSignIn() {
+
+  }
+
+  async githubSignIn() {
+    
   }
 }

@@ -9,7 +9,7 @@ export const ProfilePage = () => {
         <CoverImage />
         <ProfileInfo />
         <div className="mb-40 md:mb-32"></div>
-        <div className="flex flex-col gap-5 lg:flex-row">
+        <div className="flex flex-col gap-5 items-center lg:flex-row">
           <Filters />
           <Tweet />
         </div>

@@ -20,7 +20,7 @@ const UserSchema = new Schema({
   },
   photoUrl: {
     type: String,
-    null: true,
+    default: null,
   },
 });
 

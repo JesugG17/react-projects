@@ -1,4 +1,4 @@
-import { User } from '../models/schemas/user.schema';
+import { User } from '@/common/models/schemas/user.schema';
 
 export const isEmailTaken = async (email: string) => {
   const user = await User.findOne({ email });

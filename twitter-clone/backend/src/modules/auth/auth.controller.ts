@@ -21,4 +21,12 @@ export class AuthController {
 
     res.status(response.code).json(response);
   }
+
+  async googleSignIn(req: Request, res: Response) {
+
+  }
+
+  async githubSignIn(req: Request, res: Response) {
+    
+  }
 }

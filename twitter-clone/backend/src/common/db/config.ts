@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
-import env from '../../../config';
-
+import env from 'env';
 export const connectDB = async () => {
   try {
     await mongoose.connect(env.MONGODB_ATLAS);
