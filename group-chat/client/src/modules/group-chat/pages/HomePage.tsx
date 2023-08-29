@@ -1,5 +1,5 @@
 import { Presentation } from '../components/home/Presentation';
-import { Navbar } from '../components/shared/Navbar';
+import { Navbar } from '../components/shared/Navbar/Navbar';
 
 export const HomePage = () => {
   return (
