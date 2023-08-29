@@ -7,6 +7,13 @@ import path from 'path';
 export default defineConfig({
     plugins: [react()],
     resolve: {
-        alias: [{find: '@', replacement: path.resolve(__dirname, 'src')}]
+        alias: [
+            {find: '@modules', replacement: path.resolve(__dirname, './src/modules')},
+            {find: '@context', replacement: path.resolve(__dirname, './src/common/context')},
+            {find: '@hooks', replacement: path.resolve(__dirname, './src/common/hooks')},
+            {find: '@services', replacement: path.resolve(__dirname, './src/common/services')},
+            {find: '@types', replacement: path.resolve(__dirname, './src/common/types')},
+            {find: '@utils', replacement: path.resolve(__dirname, './src/common/utils')},
+        ]
     }
 });

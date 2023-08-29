@@ -15,7 +15,12 @@
         "jsx": "react-jsx",
         "baseUrl": ".",
         "paths": {
-            "@/*":  ["./src/*"]
+            "@modules/*": ["./src/modules/*"],
+            "@context/*":  ["./src/common/context/*"],
+            "@hooks/*":  ["./src/common/hooks/*"],
+            "@services/*":  ["./src/common/services/*"],
+            "@types/*":  ["./src/common/types/*"],
+            "@utils/*":  ["./src/common/utils/*"],
         },
         "typeRoots": ["./node_modules/@types", "./src/types"],
         /* Linting */

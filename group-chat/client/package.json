@@ -6,12 +6,16 @@
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
+        "forma": "prettier . --write",
         "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
     "dependencies": {
+        "framer-motion": "^10.16.1",
         "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "react-dom": "^18.2.0",
+        "react-router": "^6.15.0",
+        "react-router-dom": "^6.15.0"
     },
     "devDependencies": {
         "@types/node": "^20.4.10",
