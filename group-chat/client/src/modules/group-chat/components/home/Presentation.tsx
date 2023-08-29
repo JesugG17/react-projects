@@ -1,11 +1,11 @@
 
 export const Presentation = () => {
   return (
-    <section className="h-screen bg-white flex items-center px-2 w-full">
+    <section className="h-screen bg-white flex flex-col justify-center items-center mt-10 px-4 w-full md:flex-row md:mt-0">
       <picture className="w-2/4 flex justify-center">
-        <img className="w-3/4 object-contain" src="/img/chatting.jpg" alt="" />
+        <img className="w-full object-contain md:w-5/6" src="/img/chatting.jpg" alt="" />
       </picture>
-      <div className="w-2/4 flex flex-col gap-3 text-center text-3xl">
+      <div className="flex flex-col gap-3 text-center text-lg md:w-2/4 md:text-lg lg:text-2xl">
         <p>
           Hello!, this is a group chat application where you can
           add friends and chat with them!. I hope you enjoy this!
