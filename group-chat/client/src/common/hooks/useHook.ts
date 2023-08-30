@@ -1,4 +1,3 @@
-
 export const useHook = () => {
-    return 'hola mundo';
-}
+  return 'hola mundo';
+};

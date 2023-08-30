@@ -1,11 +1,14 @@
+import { useAuthModal } from '@hooks/useAuthModal';
+import { AuthModal } from '../components/auth/AuthModal';
 import { Presentation } from '../components/home/Presentation';
-import { Navbar } from '../components/shared/Navbar/Navbar';
 
 export const HomePage = () => {
+  const { isOpen } = useAuthModal();
+
   return (
     <>
-      <Navbar />
       <Presentation />
+      {isOpen && <AuthModal />}
     </>
-  )
-}
+  );
+};

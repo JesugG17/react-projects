@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
 export const DropMenu: FC<Props> = ({ isMenuOpen }) => {
   return (
@@ -20,5 +20,5 @@ export const DropMenu: FC<Props> = ({ isMenuOpen }) => {
 };
 
 type Props = {
-    isMenuOpen: boolean;
-}
+  isMenuOpen: boolean;
+};
