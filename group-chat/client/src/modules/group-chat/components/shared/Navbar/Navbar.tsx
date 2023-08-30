@@ -1,18 +1,32 @@
 import { useEffect, useState } from 'react';
-import { ChatIcon, CloseMenuIcon, MenuIcon } from '../Icons';
-import { Link } from 'react-router-dom';
-import { DropMenu } from './DropMenu';
+import { toast, ToastContainer } from 'react-toastify';
+import { Link, useNavigate } from 'react-router-dom';
 import { useIsMinWidth } from '@hooks/useIsMinWidth';
 import { TABLET_WIDTH } from '@utils/constants/window.constants';
 import { useAuthStore } from '@store/auth/authStore';
 import { useAuthModal } from '@hooks/useAuthModal';
+import { ChatIcon, CloseMenuIcon, MenuIcon } from '../Icons';
+import { DropMenu } from './DropMenu';
 export const Navbar = () => {
   const status = useAuthStore((state) => state.status);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const isMinWidth = useIsMinWidth(TABLET_WIDTH);
   const { toggleModal } = useAuthModal();
-
+  const navigate = useNavigate();
   const isAuthorized = status === 'authorized';
+
+  const handleClick = () => {
+    if (!isAuthorized) {
+      toast.info('You need to Sign in before to access here!', {
+        position: 'top-center',
+        theme: 'dark',
+        autoClose: 2000,
+      });
+      return toggleModal();
+    }
+
+    navigate('/chats');
+  };
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -27,7 +41,7 @@ export const Navbar = () => {
         </Link>
         <div className='hidden text-white md:flex md:items-center gap-5 text-lg'>
           <Link to='/home'>Home</Link>
-          <Link to='/chats'>Chats</Link>
+          <button onClick={handleClick}>Chats</button>
         </div>
         {isAuthorized ? (
           <button className='hidden md:block'>Sign out</button>
@@ -41,6 +55,7 @@ export const Navbar = () => {
         </div>
       </nav>
       <DropMenu isMenuOpen={isMenuOpen} />
+      <ToastContainer pauseOnFocusLoss={false} pauseOnHover={false} />
     </header>
   );
 };
