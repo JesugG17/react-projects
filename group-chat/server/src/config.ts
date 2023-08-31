@@ -6,15 +6,24 @@ dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 interface ENV {
   PORT: number;
+  DB_USER: string;
+  DB_PASSWORD: string;
+  DB_DATABASE: string;
 }
 
 interface Config {
   PORT: number;
+  DB_USER: string;
+  DB_PASSWORD: string;
+  DB_DATABASE: string;
 }
 
 const getConfig = (): ENV => {
   return {
     PORT: process.env.PORT,
+    DB_USER: process.env.DB_USER,
+    DB_PASSWORD: process.env.DB_PASSWORD,
+    DB_DATABASE: process.env.DB_DATABASE
   };
 };
 
