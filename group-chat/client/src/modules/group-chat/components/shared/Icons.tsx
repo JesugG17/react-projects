@@ -9,3 +9,7 @@ export const MenuIcon = () => {
 export const CloseMenuIcon = () => {
   return <img className='invert w-6' src='/img/close.svg' alt='Close icon' />;
 };
+
+export const ShowChatsIcon = () => {
+  return <img src='/img/chats-icon' alt='Chats icon' />;
+};

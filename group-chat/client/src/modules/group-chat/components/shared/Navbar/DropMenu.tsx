@@ -8,10 +8,10 @@ export const DropMenu: FC<Props> = ({ isMenuOpen }) => {
         isMenuOpen && 'h-36'
       }`}
     >
-      <Link className={`${isMenuOpen ? 'block' : 'hidden'}`} to='#'>
+      <Link className={`${isMenuOpen ? 'block' : 'hidden'}`} to='/home'>
         Home
       </Link>
-      <Link className={`${isMenuOpen ? 'block' : 'hidden'}`} to='#'>
+      <Link className={`${isMenuOpen ? 'block' : 'hidden'}`} to='/chats'>
         Chats
       </Link>
       <button className={`text-red-500 underline ${isMenuOpen ? 'block' : 'hidden'}`}>Sign out</button>

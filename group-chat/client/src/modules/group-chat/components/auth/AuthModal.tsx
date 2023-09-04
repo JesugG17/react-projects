@@ -12,7 +12,7 @@ export const AuthModal = () => {
       <main className='w-5/6 flex flex-col gap-5 p-4 bg-white rounded shadow md:w-[400px]'>
         <div className='flex'>
           <Tabs tabSelected={tabSelected} setTab={setTabSelected} />
-          <button className='hover:brightness-110' onClick={toggleModal}>
+          <button className='hover:brightness-125 transition-all duration-200' onClick={toggleModal}>
             ❌
           </button>
         </div>

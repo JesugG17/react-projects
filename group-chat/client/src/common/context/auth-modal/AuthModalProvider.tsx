@@ -4,8 +4,6 @@ import { AuthModalContext } from './AuthModalContext';
 export const AuthModalProvider: FC<Props> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(isOpen);
-
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };

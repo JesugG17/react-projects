@@ -10,7 +10,7 @@ interface Actions {
 }
 
 export const useAuthStore = create<State & Actions>((set, get) => ({
-  status: 'non-authorized',
+  status: 'authorized',
   login: async (email: string, password: string) => {},
   register: async (userName: string, email: string, password: string) => {},
 }));

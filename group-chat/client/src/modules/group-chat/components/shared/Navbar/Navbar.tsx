@@ -47,7 +47,7 @@ export const Navbar = () => {
           <button className='hidden md:block'>Sign out</button>
         ) : (
           <button className='hidden md:block' onClick={toggleModal}>
-            Sign up
+            Sign in
           </button>
         )}
         <div className='flex items-center md:hidden' onClick={() => setIsMenuOpen((previous) => !previous)}>
