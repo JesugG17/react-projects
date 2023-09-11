@@ -153,6 +153,15 @@
     margin-left: 10px;
     font-weight: bold;
   }
+
+  .message-meta {
+    display: flex;
+    gap: 5px;
+  }
+
+  .message-meta p:last-child {
+    font-weight: bold;
+  }
   
   .chat-window .chat-body .message .message-meta {
     display: flex;
