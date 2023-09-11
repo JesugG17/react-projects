@@ -29,7 +29,7 @@ const messages = [
 export const Chat = () => {
   return (
     <main className='bg-slate-500 w-full h-[565px] rounded flex flex-col '>
-      <article className='bg-blue-400 w-full flex p-2 text-white'>Jesus Gastelum</article>
+      <h3 className='bg-blue-400 w-full flex p-2 text-white'>Jesus Gastelum</h3>
       <ul className='flex flex-col gap-5 flex-1 p-2'>
         {messages.map((message, index) => (
           <li
@@ -46,7 +46,7 @@ export const Chat = () => {
           </li>
         ))}
       </ul>
-      <form className='w-full flex bg-white rounded'>
+      <form onSubmit={(event) => event.preventDefault()} className='w-full flex bg-white rounded'>
         <input className='flex-1 p-1 focus:outline-none' type='text' placeholder='Send a message' />
         <button className='bg-blue-500 p-1 text-white'>send</button>
       </form>
