@@ -23,7 +23,6 @@ const cards = [
 ];
 
 export const SelectPlan = () => {
-
   const [toggle, setToggle] = useState(false);
 
   return (
@@ -44,11 +43,15 @@ export const SelectPlan = () => {
       </ul>
       <article className='flex justify-center items-center bg-cyan-light py-3 rounded gap-5'>
         <span className='text-blue-dark font-bold'>Monthly</span>
-        <button 
-          onClick={() => setToggle(prevState => !prevState)}
+        <button
+          onClick={() => setToggle((prevState) => !prevState)}
           className='bg-blue-dark relative p-1 rounded-full w-12 h-6'
         >
-          <div className={`bg-white rounded-full h-4 w-4 transition-all duration-200 ${toggle &&'translate-x-6'}`}></div>
+          <div
+            className={`bg-white rounded-full h-4 w-4 transition-all duration-200 ${
+              toggle && 'translate-x-6'
+            }`}
+          ></div>
         </button>
         <span className='opacity-40 font-bold'>Yearly</span>
       </article>

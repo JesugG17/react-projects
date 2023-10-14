@@ -13,7 +13,7 @@ type Action = {
 
 export const useStepStore = create<State & Action>((set, get) => ({
   completedSteps: [],
-  currentStep: 2,
+  currentStep: 3,
   nextStep: () => {
     const { completedSteps, currentStep } = get();
 
