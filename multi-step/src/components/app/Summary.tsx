@@ -10,7 +10,7 @@ export const Summary = () => {
             <article className="flex w-full justify-between items-center border-b py-2">
                 <div>
                     <h5 className="text-blue-dark font-bold text-sm">Arcade (Montly)</h5>
-                    <button className="opacity-60 underline">Change</button>
+                    <button className="opacity-60 underline hover:opacity-100 hover:text-violet-800 hover:font-medium">Change</button>
                 </div>
                 <span className="text-blue-dark font-bold">$9/mo</span>
             </article>
