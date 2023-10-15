@@ -8,6 +8,7 @@ export default {
         'blue-light': '#BFE0FF',
         'blue-dark': '#03295A',
         'cyan-light': '#F8F9FE',
+        'violet-light': '#483EFF'
       },
     },
   },

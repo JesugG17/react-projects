@@ -8,12 +8,13 @@ type State = {
 type Action = {
   nextStep: () => void;
   previousStep: () => void;
+  confirmAll: () => void;
   selectStep: (step: number) => void;
 };
 
 export const useStepStore = create<State & Action>((set, get) => ({
   completedSteps: [],
-  currentStep: 3,
+  currentStep: 1,
   nextStep: () => {
     const { completedSteps, currentStep } = get();
 
@@ -21,6 +22,8 @@ export const useStepStore = create<State & Action>((set, get) => ({
     if (!completedSteps.includes(currentStep)) {
       newCompletedSteps.push(currentStep);
     }
+
+    if (currentStep === 4) return;
 
     set({
       currentStep: currentStep + 1,
@@ -30,7 +33,12 @@ export const useStepStore = create<State & Action>((set, get) => ({
   previousStep: () => {
     const currentStep = get().currentStep;
 
+    if (currentStep === 1) return;
+
     set({ currentStep: currentStep - 1 });
+  },
+  confirmAll: () => {
+    set({currentStep: 5});
   },
   selectStep: (step: number) => {
     const completedSteps = get().completedSteps;

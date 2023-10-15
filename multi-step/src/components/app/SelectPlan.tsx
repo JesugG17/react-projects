@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { CardLayout } from '../layouts/CardLayout';
+import { twMerge } from 'tailwind-merge';
 
 const title = 'Select your plan';
 const paragraph = 'You have the option of monthly or yearly billing';
@@ -22,16 +23,23 @@ const cards = [
   },
 ];
 
+const DEFAULT_PLAN_SELECTED = 0;
+
 export const SelectPlan = () => {
   const [toggle, setToggle] = useState(false);
+  const [planSelected, setPlanSelected] = useState(DEFAULT_PLAN_SELECTED);
 
   return (
     <CardLayout title={title} paragraph={paragraph}>
       <ul className='w-full flex flex-col gap-3 items-center'>
-        {cards.map((card) => (
+        {cards.map((card, index) => (
           <li
             key={card.type}
-            className='ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2 first-of-type:bg-cyan-light first-of-type:ring-blue-dark'
+            onClick={() => setPlanSelected(index)}
+            className={twMerge(
+              'ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2',
+              planSelected === index && 'ring-blue-dark bg-background'
+            )}
           >
             <img className='w-8' src={card.img} alt={`${card.type} logo`} />
             <div className='flex flex-col'>
@@ -48,9 +56,13 @@ export const SelectPlan = () => {
           className='bg-blue-dark relative p-1 rounded-full w-12 h-6'
         >
           <div
-            className={`bg-white rounded-full h-4 w-4 transition-all duration-200 ${
+            className={twMerge(
+              'bg-white rounded-full h-4 w-4 transition-all duration-200',
               toggle && 'translate-x-6'
-            }`}
+            )}
+            // className={` ${
+            //   toggle && 'translate-x-6'
+            // }`}
           ></div>
         </button>
         <span className='opacity-40 font-bold'>Yearly</span>

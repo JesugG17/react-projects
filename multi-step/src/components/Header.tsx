@@ -1,6 +1,12 @@
+import { useStepStore } from "../store/step-store";
+import { twMerge } from 'tailwind-merge';
+
 const buttons = [1, 2, 3, 4];
 
 export const Header = () => {
+
+  const currentStep = useStepStore(state => state.currentStep);
+
   return (
     <header className='relative'>
       <img
@@ -10,10 +16,10 @@ export const Header = () => {
       />
       <nav className='absolute top-8 flex justify-center w-full'>
         <ul className='flex gap-3'>
-          {buttons.map((button) => (
+          {buttons.map((button, index) => (
             <li
               key={button}
-              className='w-7 h-7 first-of-type:bg-blue-light first-of-type:text-black rounded-full p-2 text-sm flex justify-center items-center text-white ring-1 ring-white'
+              className={twMerge('w-7 h-7 rounded-full p-2 text-sm flex justify-center items-center text-white ring-1 ring-white', currentStep === index + 1  && 'bg-blue-light text-black', currentStep === 5 && 'last-of-type:bg-blue-light last-of-type:text-black')}
             >
               {button}
             </li>

@@ -11,6 +11,6 @@ export const CardLayout: FC<Props> = ({ title, paragraph, children }) => {
 };
 
 type Props = {
-  title: string;
-  paragraph: string;
+  title?: string;
+  paragraph?: string;
 } & PropsWithChildren;
