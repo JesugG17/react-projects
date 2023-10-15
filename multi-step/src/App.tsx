@@ -1,6 +1,4 @@
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
-import { Steps } from './components/Steps';
+import { Header, Steps, Footer } from './components';
 import { useStepStore } from './store/step-store';
 
 export const App = () => {

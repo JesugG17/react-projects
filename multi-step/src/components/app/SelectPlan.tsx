@@ -37,7 +37,7 @@ export const SelectPlan = () => {
             key={card.type}
             onClick={() => setPlanSelected(index)}
             className={twMerge(
-              'ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2',
+              'ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2 hover:ring-blue-dark cursor-pointer',
               planSelected === index && 'ring-blue-dark bg-background'
             )}
           >
@@ -60,9 +60,6 @@ export const SelectPlan = () => {
               'bg-white rounded-full h-4 w-4 transition-all duration-200',
               toggle && 'translate-x-6'
             )}
-            // className={` ${
-            //   toggle && 'translate-x-6'
-            // }`}
           ></div>
         </button>
         <span className='opacity-40 font-bold'>Yearly</span>
