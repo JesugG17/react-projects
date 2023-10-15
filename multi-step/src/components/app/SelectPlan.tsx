@@ -31,13 +31,13 @@ export const SelectPlan = () => {
 
   return (
     <CardLayout title={title} paragraph={paragraph}>
-      <ul className='w-full flex flex-col gap-3 items-center'>
+      <ul className='w-full flex flex-col gap-3 items-center md:flex-row md:justify-between'>
         {cards.map((card, index) => (
           <li
             key={card.type}
             onClick={() => setPlanSelected(index)}
             className={twMerge(
-              'ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2 hover:ring-blue-dark cursor-pointer',
+              'ring-1 w-[90%] h-[60px] rounded-md p-2 ring-gray-400 flex items-center gap-2 hover:ring-blue-dark cursor-pointer md:flex-col md:h-[135px] md:items-start md:justify-between md:w-1/3 md:py-4',
               planSelected === index && 'ring-blue-dark bg-background'
             )}
           >
@@ -49,8 +49,8 @@ export const SelectPlan = () => {
           </li>
         ))}
       </ul>
-      <article className='flex justify-center items-center bg-cyan-light py-3 rounded gap-5'>
-        <span className='text-blue-dark font-bold'>Monthly</span>
+      <article className='flex justify-center items-center bg-cyan-light py-3 rounded gap-5 md:mt-10'>
+        <span className={twMerge('text-blue-dark font-bold', toggle && 'opacity-40 text-black')}>Monthly</span>
         <button
           onClick={() => setToggle((prevState) => !prevState)}
           className='bg-blue-dark relative p-1 rounded-full w-12 h-6'
@@ -62,7 +62,7 @@ export const SelectPlan = () => {
             )}
           ></div>
         </button>
-        <span className='opacity-40 font-bold'>Yearly</span>
+        <span className={twMerge('opacity-40 text-black font-bold', toggle && 'opacity-100 text-blue-dark')}>Yearly</span>
       </article>
     </CardLayout>
   );

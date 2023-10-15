@@ -7,8 +7,8 @@ export const PersonalInfo = () => {
   return (
     <CardLayout title={title} paragraph={paragraph}>
       <form className='flex flex-col gap-5'>
-        <article className='flex flex-col'>
-          <label className='text-blue-dark font-medium text-xs' htmlFor='name'>
+        <article className='flex flex-col lg:gap-2'>
+          <label className='text-blue-dark font-medium text-xs lg:text-sm' htmlFor='name'>
             Name
           </label>
           <input
@@ -18,8 +18,8 @@ export const PersonalInfo = () => {
             placeholder='e.g Stephen King'
           />
         </article>
-        <article className='flex flex-col'>
-          <label className='text-blue-dark font-medium text-xs' htmlFor='email'>
+        <article className='flex flex-col gap-2'>
+          <label className='text-blue-dark font-medium text-xs lg:text-sm' htmlFor='email'>
             Email Address
           </label>
           <input
@@ -29,8 +29,8 @@ export const PersonalInfo = () => {
             placeholder='e.g stephenking@lorem.com'
           />
         </article>
-        <article className='flex flex-col'>
-          <label className='text-blue-dark font-medium text-xs' htmlFor='phone'>
+        <article className='flex flex-col gap-2'>
+          <label className='text-blue-dark font-medium text-xs lg:text-sm' htmlFor='phone'>
             Phone number
           </label>
           <input

@@ -1,7 +1,24 @@
 import { useStepStore } from "../store/step-store";
 import { twMerge } from 'tailwind-merge';
 
-const buttons = [1, 2, 3, 4];
+const STEPS = [
+  {
+    stepNumber: 1,
+    stepName: 'YOUR INFO'
+  },
+  {
+    stepNumber: 2,
+    stepName: 'SELECT PLAN'
+  },
+  {
+    stepNumber: 3,
+    stepName: 'ADD-ONS'
+  },
+  {
+    stepNumber: 4,
+    stepName: 'SUMMARY'
+  },
+]
 
 export const Header = () => {
 
@@ -10,18 +27,23 @@ export const Header = () => {
   return (
     <header className='relative'>
       <img
-        className='w-full h-[150px] object-cover'
+        className='w-full h-[150px] object-cover md:hidden'
         src='/img/bg-sidebar-mobile.svg'
         alt='Bg mobile'
       />
-      <nav className='absolute top-8 flex justify-center w-full'>
-        <ul className='flex gap-3'>
-          {buttons.map((button, index) => (
+      <img className="hidden md:block h-full object-cover" src="/img/bg-sidebar-desktop.svg" alt="Bg desktop" />
+      <nav className='absolute top-8 flex justify-center w-full md:justify-start md:left-8'>
+        <ul className='flex gap-4 md:flex-col md:gap-8'>
+          {STEPS.map((step) => (
             <li
-              key={button}
-              className={twMerge('w-7 h-7 rounded-full p-2 text-sm flex justify-center items-center text-white ring-1 ring-white', currentStep === index + 1  && 'bg-blue-light text-black', currentStep === 5 && 'last-of-type:bg-blue-light last-of-type:text-black')}
+              className="md:flex md:gap-5 md:items-center"
+              key={step.stepNumber}
             >
-              {button}
+              <div className={twMerge('text-white ring-1 ring-white p-4 w-6 h-6 flex justify-center items-center rounded-full', currentStep === step.stepNumber && 'bg-blue-light text-black')}>{step.stepNumber}</div>
+              <div className="hidden text-white md:flex md:flex-col">
+                <span className="opacity-40 text-xs">STEP {step.stepNumber}</span>
+                <h5 className="text-sm font-medium">{step.stepName}</h5>
+              </div>
             </li>
           ))}
         </ul>

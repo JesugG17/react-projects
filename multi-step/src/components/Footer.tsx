@@ -5,7 +5,7 @@ export const Footer = () => {
   const { previousStep, nextStep, confirmAll, currentStep } = useStepStore();
 
   return (
-    <footer className='fixed w-full flex justify-between bottom-0 bg-white p-4'>
+    <footer className='fixed w-full flex justify-between bottom-0 bg-white p-4 md:static lg:w-[85%]'>
       <button
         onClick={previousStep}
         className={twMerge('font-bold opacity-50', currentStep === 1 && 'opacity-0 cursor-none')}
@@ -17,7 +17,7 @@ export const Footer = () => {
           Confirm
         </button>
       ) : (
-        <button onClick={nextStep} className='bg-blue-dark text-white p-2 rounded'>
+        <button onClick={nextStep} className='bg-blue-dark text-white p-2 rounded-md lg:px-4'>
           Next step
         </button>
       )}

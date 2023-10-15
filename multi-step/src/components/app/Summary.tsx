@@ -3,10 +3,10 @@ import { CardLayout } from "../layouts/CardLayout";
 const title = 'Finishing up';
 const paragraph = 'Double-check everything looks OK before confirming';
 
-export const FinishStep = () => {
+export const Summary = () => {
   return (
     <CardLayout title={title} paragraph={paragraph}>
-        <article className="bg-background flex flex-col rounded-md items-start p-3 gap-2">
+        <article className="bg-background flex flex-col rounded-md items-start p-3 gap-2 lg:mt-3">
             <article className="flex w-full justify-between items-center border-b py-2">
                 <div>
                     <h5 className="text-blue-dark font-bold text-sm">Arcade (Montly)</h5>

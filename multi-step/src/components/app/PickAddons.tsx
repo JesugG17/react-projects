@@ -68,16 +68,16 @@ export const PickAddons = () => {
           <li
             key={card.service}
             onClick={() => handleCheckAddon(card.service)}
-            className={twMerge('flex justify-between items-center border px-3 py-2 rounded', returnCheckedStyles(card.service))}
+            className={twMerge('flex justify-between items-center border px-3 py-2 rounded lg:px-4', returnCheckedStyles(card.service))}
           >
             <div className='flex gap-3'>
               <input className='w-5 checked:before:bg-violet-500' type='checkbox' />
               <div className='flex flex-col'>
                 <h4 className='text-blue-dark font-bold'>{card.service}</h4>
-                <span className='text-xs opacity-60'>{card.description}</span>
+                <span className='text-xs opacity-60 lg:text-sm'>{card.description}</span>
               </div>
             </div>
-            <span className='text-violet-700 text-xs font-medium'>{card.price}</span>
+            <span className='text-violet-700 text-xs font-medium lg:text-sm'>{card.price}</span>
           </li>
         ))}
       </ul>
