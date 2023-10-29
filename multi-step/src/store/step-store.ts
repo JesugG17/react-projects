@@ -1,13 +1,17 @@
 import { create } from 'zustand';
 
+type PriceSelected = 'montly' | 'yearly';
+
 type State = {
   completedSteps: number[];
   currentStep: number;
+  priceSelected: PriceSelected;
 };
 
 type Action = {
   nextStep: () => void;
   previousStep: () => void;
+  setPriceSelected: (priceSelected: PriceSelected) => void;
   confirmAll: () => void;
   selectStep: (step: number) => void;
 };
@@ -15,6 +19,7 @@ type Action = {
 export const useStepStore = create<State & Action>((set, get) => ({
   completedSteps: [],
   currentStep: 1,
+  priceSelected: 'montly',
   nextStep: () => {
     const { completedSteps, currentStep } = get();
 
@@ -37,8 +42,11 @@ export const useStepStore = create<State & Action>((set, get) => ({
 
     set({ currentStep: currentStep - 1 });
   },
+  setPriceSelected: (planSelected: PriceSelected) => {
+    set({ priceSelected: planSelected });
+  },
   confirmAll: () => {
-    set({currentStep: 5});
+    set({ currentStep: 5 });
   },
   selectStep: (step: number) => {
     const completedSteps = get().completedSteps;

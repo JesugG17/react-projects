@@ -12,7 +12,7 @@ export const PersonalInfo = () => {
             Name
           </label>
           <input
-            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded'
+            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded w-full'
             id='name'
             type='text'
             placeholder='e.g Stephen King'
@@ -23,7 +23,7 @@ export const PersonalInfo = () => {
             Email Address
           </label>
           <input
-            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded'
+            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded w-full'
             id='email'
             type='email'
             placeholder='e.g stephenking@lorem.com'
@@ -34,7 +34,7 @@ export const PersonalInfo = () => {
             Phone number
           </label>
           <input
-            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded'
+            className='border-2 border-gray-300 py-1 px-3 focus:outline-none rounded w-full'
             id='phone'
             type='tel'
             placeholder='e.g +1 234 567 890'
