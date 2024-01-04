@@ -1,10 +1,13 @@
 import { FC } from 'react';
 import { Job } from '../interfaces/job.interface';
+import { useFilter } from '../hooks/useFilter';
 
 export const Card: FC<Props> = ({ job }) => {
+  const { addFilter } = useFilter();
+
   return (
     <section
-      className={`flex flex-col lg:flex-row lg:justify-between border-l-4 relative w-4/5 max-w-3xl bg-white p-4 mt-8 rounded shadow-opaque shadow-primary ${
+      className={`flex flex-col lg:flex-row lg:justify-between border-l-4 relative w-4/5 max-w-3xl bg-white p-4 first:mt-8 last:mb-8 rounded shadow-opaque shadow-primary ${
         job.new && job.featured ? 'border-primary' : 'border-transparent'
       }`}
     >
@@ -16,7 +19,7 @@ export const Card: FC<Props> = ({ job }) => {
             {job.new && <li className="text-white rounded-full bg-primary py-1 px-3">NEW!</li>}
             {job.featured && <li className="bg-black text-white py-1 px-3 rounded-full">FEATURED</li>}
           </ul>
-          <h2 className="font-bold text-md">{job.position}</h2>
+          <h2 className="font-bold text-md hover:text-primary transition-all duration-200 cursor-pointer">{job.position}</h2>
           <ul className="flex items-center gap-2 opacity-40 text-sm lg:text-base">
             <li>{job.postedAt}</li>
             <li className="flex items-center gap-2">
@@ -33,7 +36,11 @@ export const Card: FC<Props> = ({ job }) => {
       <hr className="mt-2 mb-2 lg:hidden" />
       <ul className="flex items-center flex-wrap gap-4 text-primary font-bold">
         {[job.role, job.level, ...job.languages, ...job.tools].map((chip) => (
-          <li className="bg-neutral-grayish-bg p-1 rounded" key={chip}>
+          <li
+            onClick={() => addFilter(chip)}
+            className="bg-neutral-grayish-bg p-1 cursor-pointer rounded hover:bg-primary hover:text-white transition-all duration-200"
+            key={chip}
+          >
             {chip}
           </li>
         ))}
