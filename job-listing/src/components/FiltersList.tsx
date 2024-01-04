@@ -4,7 +4,7 @@ import { FiltersListItem } from './FiltersListItem';
 export const FiltersList = () => {
   const { filters, clearFilters } = useFilter();
   return (
-    <section className="bg-white flex justify-between items-center p-4 -top-8 relative w-4/5 max-w-3xl">
+    <section className="bg-white flex justify-between items-center p-4 -top-8 relative w-4/5 max-w-3xl rounded shadow-lg">
       <ul className="flex flex-wrap gap-3">
         {filters.map((filter) => (
           <FiltersListItem filter={filter} key={filter} />
