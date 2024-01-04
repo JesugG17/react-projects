@@ -12,6 +12,9 @@ export default {
         'neutral-grayish-filter': 'hsl(180, 31%, 95%)',
         'dark-grayish-cyan': 'hsl(180, 8%, 52%)',
         'very-dark-grayish-cyan': 'hsl(180, 14%, 20%)'
+      },
+      boxShadow: {
+        'opaque': '0 20px 50px -30px rgba(0, 0, 0, 0.05)',
       }
     },
   },

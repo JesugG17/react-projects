@@ -6,7 +6,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      <main className="flex flex-col items-center bg-neutral-grayish-bg h-screen">
+      <main className="flex flex-col items-center bg-neutral-grayish-bg min-h-screen">
         {jobs.map((job) => (
           <Card job={job} />
         ))}
