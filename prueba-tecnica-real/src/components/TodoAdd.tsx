@@ -1,6 +1,5 @@
 import { Form, Header, Grid, Input, Button } from 'semantic-ui-react';
-import { useForm } from '../hooks/useForm';
-import { useTodos } from '../hooks/useTodos';
+import { useForm, useTodos } from '../hooks';
 
 export const TodoAdd = () => {
   const { formState, handleChange, resetForm } = useForm({ todo: '' });
