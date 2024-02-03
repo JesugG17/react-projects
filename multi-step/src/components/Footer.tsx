@@ -9,8 +9,8 @@ export const Footer = () => {
       <button
         onClick={previousStep}
         className={twMerge(
-          'font-bold opacity-50 transition-all duration-150 hover:opacity-100 hover:text-blue-dark',
-          currentStep === 1 && 'opacity-0 cursor-none'
+          'font-bold opacity-50 transition-all pointer-events-auto duration-150 select-none hover:opacity-100 hover:text-blue-dark',
+          currentStep === 1 && 'opacity-0 cursor-none pointer-events-none'
         )}
       >
         Go back

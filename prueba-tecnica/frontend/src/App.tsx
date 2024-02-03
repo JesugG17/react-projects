@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { AddItem, ListItem } from './components';
 import { Item } from './types/item.interface';
 
-
 function App() {
 
   const [items, setItems] = useState<Item[]>([]);

@@ -2,10 +2,22 @@ import { create } from 'zustand';
 
 type PriceSelected = 'montly' | 'yearly';
 
+type Summary = {
+  plan: {
+    type: string;
+    price: number;
+  },
+  addons: {
+    type: string;
+    price: number;
+  }
+}
+
 type State = {
   completedSteps: number[];
   currentStep: number;
   priceSelected: PriceSelected;
+  summary: Summary;
 };
 
 type Action = {
@@ -19,6 +31,10 @@ type Action = {
 export const useStepStore = create<State & Action>((set, get) => ({
   completedSteps: [],
   currentStep: 1,
+  summary: {
+    plan: { type: 'Arcade', price: 2 },
+    addons: { type: 'Larger Storage', price: 10 }
+  },
   priceSelected: 'montly',
   nextStep: () => {
     const { completedSteps, currentStep } = get();

@@ -1,0 +1,20 @@
+vlan database
+vtp server
+vlan 10
+name TIC
+vlan 20
+name ISC
+vlan 30
+name MKT
+
+interface range fa0/1-8
+switchport access vlan 10
+exit
+
+interface range fa0/9-16
+switchport access vlan 30
+exit
+
+interface range fa0/17-24
+switchport access vlan 30
+exit

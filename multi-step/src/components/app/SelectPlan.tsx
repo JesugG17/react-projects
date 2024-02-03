@@ -31,15 +31,16 @@ const cards: Card[] = [
   },
 ];
 
+
 const DEFAULT_PLAN_SELECTED = 0;
 
 export const SelectPlan = () => {
-  const plan = useStepStore((state) => state.priceSelected);
-  const setPriceSelected = useStepStore((state) => state.setPriceSelected);
+  const priceSeletected = useStepStore(state => state.priceSelected);
+  const setPriceSelected = useStepStore(state => state.setPriceSelected);
   const [planSelected, setPlanSelected] = useState(DEFAULT_PLAN_SELECTED);
 
-  const priceIndex = plan === 'montly' ? 0 : 1;
-  console.log(plan);
+  const priceIndex = priceSeletected === 'montly' ? 0 : 1; 
+  console.log(priceSeletected);
 
   return (
     <CardLayout title={title} paragraph={paragraph}>
@@ -57,34 +58,33 @@ export const SelectPlan = () => {
             <div className='flex flex-col'>
               <h5 className='font-bold text-blue-dark text-sm'>{card.type}</h5>
               <span className='opacity-40 text-xs'>{card.price[priceIndex]}</span>
+              {
+                priceSeletected === YEARLY &&
+                <span className='text-xs font-bold'>2 months free</span>
+              }
             </div>
           </li>
         ))}
       </ul>
       <article className='flex justify-center items-center bg-cyan-light py-3 rounded gap-5 md:mt-10'>
-        <span
-          className={twMerge(
-            'text-blue-dark font-bold',
-            plan === YEARLY && 'opacity-40 text-black'
-          )}
-        >
+        <span className={twMerge('text-blue-dark font-bold', priceSeletected === YEARLY && 'opacity-40 text-black')}>
           Monthly
         </span>
         <button
-          onClick={() => setPriceSelected(plan === 'montly' ? 'yearly' : 'montly')}
+          onClick={() => setPriceSelected(priceSeletected === 'montly' ? 'yearly' : 'montly')}
           className='bg-blue-dark relative p-1 rounded-full w-12 h-6'
         >
           <div
             className={twMerge(
               'bg-white rounded-full h-4 w-4 transition-all duration-200',
-              plan === YEARLY && 'translate-x-6'
+              priceSeletected === YEARLY && 'translate-x-6'
             )}
           ></div>
         </button>
         <span
           className={twMerge(
             'opacity-40 text-black font-bold',
-            plan === YEARLY && 'opacity-100 text-blue-dark'
+            priceSeletected === YEARLY && 'opacity-100 text-blue-dark'
           )}
         >
           Yearly
