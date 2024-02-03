@@ -33,10 +33,7 @@ export const TodoListItem: FC<Props> = ({ todo }) => {
 
   return (
     <ListItem style={ListItemStyles}>
-      <Segment
-        columns={2}
-        style={SegmentStyles}
-      >
+      <Segment style={SegmentStyles}>
         <SegmentInline style={SegmentInlineStyles}>
           <Checkbox
             onClick={() => toggleTodo(todo.id)}
